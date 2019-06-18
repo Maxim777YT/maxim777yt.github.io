@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru_RU">
+<head>
+<title>Tic Tac toe</title>
+<style>
+.field {
+background: linear-gradient(45deg, darkGreen, #00ab00);
+width: 521px;
+height: 521px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+border: 12px solid #ffe5b4;
+border-radius: 25px;
+}
+.cell {
+width: 166px;
+height: 166px;
+background: transparent;
+border: 5px solid black;
+margin: 0;
+padding: 0;
+background-size: cover;
+}
+#cell1, #cell2, #cell3 {
+border-top: none;
+}
+#cell1, #cell4, #cell7 {
+border-left: none;
+}
+#cell6, #cell9, #cell3 {
+border-right: none;
+}
+#cell7, #cell8, #cell9 {
+border-bottom: none;
+}
+#cell1 {
+border-radius: 25px 0 0 0;
+}
+#cell3 {
+border-radius: 0 25px 0 0;
+}
+#cell9 {
+border-radius: 0 0 25px 0;
+}
+#cell7 {
+border-radius: 0 0 0 25px;
+}
+#btn {
+display: inline-block;
+color: white;
+font-size: 2em;
+text-decoration: none;
+padding: 0.25em 1em;
+outline: none;
+border-width: 4px 0;
+border-style: solid none;
+border-color: #fbde33 #000 #d77206;
+border-radius: 12px;
+background: linear-gradient(#f3ae0f, #e38916) #e38916;
+transition: 0.2s;
+}
+#btn:hover {
+background: linear-gradient(#f5ae00, #f59500) #f5ae00;
+}
+#btn:active  {
+background: linear-gradient(#f59500, #f5ae00) #f59500);
+}
+.result {
+font-variant: small-caps;
+color: #fff900;
+font-family: Arial;
+text-shadow: 0 1px 0 #ffe700, 0 1px 0.7vmin rgba(255, 225, 0, .3), 0 1px 0.5vmin rgba(0, 0, 0, .2), 0 0.1vmin 0 #ffe700, 0 0.2vmin 0 #ffe700, 0 0.3vmin 0 #ffe700, 0 0.4vmin 0 #ffe700, 0 0.5vmin 0 #ffe700, 0 0.6vmin 0 #ffe700, 0 1px 0.7vmin rgba(0, 0, 0, .3), 0 0.7vmin 0 #ffe700;
+font-size: 3em;
+margin-bottom: 50px;
+}
+body {
+background: #eee;
+}
+</style>
+<script>
+function start() {
+a = true;
+document.querySelector("#btn").style.display = "none";
+document.querySelector(".result").innerHTML = " ";
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+for(let i=0; i<9; i++) {
+cells[i].style.background = "transparent";
+cells[i].removeAttribute("char");
+}
+}
+var xAudio = document.createElement("audio");
+xAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b61298e418eb8d&attid=0.1&disp=attd&realattid=76ad29b43609df26_0.1&safe=1&zw&saddbat=ANGjdJ_7sfk-tMRAvVxYLv6QTPCoaPfbEocSfpoEu-JLggjD0KEMirwgK5FZMqSO1DT0Em3rS7ZAZC6ZKu7a_ZxGmqSGFE2BZDBUz4wyodOS7ug-PxKS-_ocYQOHf40eP4KCBJ_-XJeuIkLLD5_SdZfkgJ-jHlEibjAn4kOlSbhCRoiI4livoin6q0zNeRtzAs9mfqSVNi-uc4TZiTwDFY5q5O9VBwNtyw-KeqUwvfZ7rpSbCN071y-AjauPMx0E2R8AfYnpp1IbkJphwobN_-fiHl_duHTgOs1QqTankEyjWfDfGmW4vaiKCgX1gIIwPaIk89fSs15-B1b-WGth-kRkpGwMBMWpUAeF_zK5G71W4dvTAqdKDwAK7-zYni_3UxfnHcTXqy4iw6W1nMaLVWJ00OV8mWINwgxn07l56jBSJydumPZbRZGXW-6MvCJkOb1dDuaJ0v0u5T6kE5z_dCSbhm-wtDu2ClGrdvYjzxYJr4e8ZCLmH-gbvZRROF2heEeRJjHi1N9zEKYmkyJB6kzogJ3srupJwVnozr152D0Zyqxnee_0DmnGdR8Z-TQTePdFV9mUm-6PRYd6frHiTyGANfhLeMEvzFU28-cs9vrI5xm5nm1AfGrEk1ZEf6joIvXgYjmmjOE9Np3HdlrOG3sNzH4NTw3xpmeYOXc3lQ");
+var zAudio = document.createElement("audio");
+zAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b612d74239b309&attid=0.1&disp=attd&realattid=4267c990b8a28061_0.1&safe=1&zw&saddbat=ANGjdJ_99wFpvGq2Y2G7oWVZu5A2ofTXNsVVEvLGCgOgCh801OORi8lya4-53Hm0hUvVxza2JoEhKK4tOFzofzOI9iKbLsLWUd1Piy-Uspl0nMX6EMp1-X6BcrmQkKmyCwTAOX7buYzkkqiVXvlolohSIdLYo5ILXmYprOX_uK1eQCNhKtv7Mh4sRKoak2jRsksrt3vRAMKcR8UUAQUp134Nmh55kIP34NVVXLvMN-1WgogkDrFxMP55bnhXNbTkb7VcgiL2Je2gBPl5X4nQ8XeW96Dn2pC7qD-jD7l5U9k9jlUqH-sACw_DLcUIP0NIFh735-lAFbfK6C2_GxNny1RR9LfR61l4yHgV4Qu73-4uh3iwNSZn8sKWW_SFOKMbI3uSjVeo8qiz30ktk_N98w7p2tZ7h1Ru_dp4dveHqGtGryRV-CqLRIQyEEsLph764usDVne-wYVCUTyFQGUS5mkAf8NKC4-51lVFJ3_JidIhxT6iJTsUtget1vMFGKfOy4Lj_WhMMSC4CIe21tG8VzlsvHfun3z64KpA0SD2Umh6dWSf27DP5opB-pO_5Ce0dnNIyTwTqTMEiMm5r9JvryU-MfTCKhilOSzgd3GuXiLgs6cNT10oCZacCh64EylP04HJczh_vCodRKXCDeIs5d1iRtP4lyl_yzmoB7a24Q");
+
+
+window.addEventListener('keydown', function(e) {
+if(e.keyCode == 103 && a == true) {
+if(document.querySelector("#cell1").getAttribute("char") != "x" && document.querySelector("#cell1").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell1").setAttribute("char", "x");
+document.querySelector("#cell1").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell1").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell1").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell1").setAttribute("char", "0");
+document.querySelector("#cell1").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 104 && a == true) {
+if(document.querySelector("#cell2").getAttribute("char") != "x" && document.querySelector("#cell2").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell2").setAttribute("char", "x");
+document.querySelector("#cell2").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell2").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell2").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell2").setAttribute("char", "0");
+document.querySelector("#cell2").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 105 && a == true) {
+if(document.querySelector("#cell3").getAttribute("char") != "x" && document.querySelector("#cell3").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell3").setAttribute("char", "x");
+document.querySelector("#cell3").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell3").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell3").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell3").setAttribute("char", "0");
+document.querySelector("#cell3").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 100 && a == true) {
+if(document.querySelector("#cell4").getAttribute("char") != "x" && document.querySelector("#cell4").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell4").setAttribute("char", "x");
+document.querySelector("#cell4").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell4").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell4").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell4").setAttribute("char", "0");
+document.querySelector("#cell4").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 101 && a == true) {
+if(document.querySelector("#cell5").getAttribute("char") != "x" && document.querySelector("#cell5").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell5").setAttribute("char", "x");
+document.querySelector("#cell5").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell5").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell5").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell5").setAttribute("char", "0");
+document.querySelector("#cell5").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 102 && a == true) {
+if(document.querySelector("#cell6").getAttribute("char") != "x" && document.querySelector("#cell6").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell6").setAttribute("char", "x");
+document.querySelector("#cell6").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell6").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell6").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell6").setAttribute("char", "0");
+document.querySelector("#cell6").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 97 && a == true) {
+if(document.querySelector("#cell7").getAttribute("char") != "x" && document.querySelector("#cell7").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell7").setAttribute("char", "x");
+document.querySelector("#cell7").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell7").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell7").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell7").setAttribute("char", "0");
+document.querySelector("#cell7").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 98 && a == true) {
+if(document.querySelector("#cell8").getAttribute("char") != "x" && document.querySelector("#cell8").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell8").setAttribute("char", "x");
+document.querySelector("#cell8").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell8").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell8").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell8").setAttribute("char", "0");
+document.querySelector("#cell8").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+if(e.keyCode == 99 && a == true) {
+if(document.querySelector("#cell9").getAttribute("char") != "x" && document.querySelector("#cell9").getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector("#cell9").setAttribute("char", "x");
+document.querySelector("#cell9").style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector("#cell9").style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector("#cell9").style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector("#cell9").setAttribute("char", "0");
+document.querySelector("#cell9").style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+})
+function check() {
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+for(let i=0; i<9; i++) {
+for(let k=0; k<9; k++) {
+for(let j=0; j<9; j++) {
+if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].getAttribute("char") == cells[j].getAttribute("char")) {
+if(i==0&&k==1&&j==2||i==0&&k==3&&j==6||i==0&&k==4&&j==8||i==2&&k==4&&j==6||i==2&&k==5&&j==8||i==6&&k==7&&j==8||i==1&&k==4&&j==7||i==3&&k==4&&j==5) {
+if(cells[i].getAttribute("char") === "x") {
+document.querySelector(".result").innerHTML = "крестики выиграли!";
+a = false;
+return true;
+}
+else if(cells[i].getAttribute("char") === "0") {
+document.querySelector(".result").innerHTML = "нолики выиграли!";
+a = false;
+return true;
+}
+else {}
+}
+document.querySelector("#btn").style.display = "inherit";
+} else {
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+if(cells[0].getAttribute("char") && cells[1].getAttribute("char") && cells[2].getAttribute("char") && cells[3].getAttribute("char") && cells[4].getAttribute("char") && cells[5].getAttribute("char") && cells[6].getAttribute("char") && cells[7].getAttribute("char") && cells[8].getAttribute("char")) {
+document.querySelector(".result").innerHTML = "ничья!";
+}
+}
+}
+}
+}
+}
+function mobilePress(id) {
+if(a == true) {
+if(document.querySelector(id).getAttribute("char") != "x" && document.querySelector(id).getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector(id).setAttribute("char", "x");
+document.querySelector(id).style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector(id).style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+c = 0;
+document.querySelector(id).style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector(id).setAttribute("char", "0");
+document.querySelector(id).style.backgroundSize = "cover";
+zAudio.play();
+}
+}
+}
+}
+let checkInt = setInterval(check, 1000/24);
+</script>
+</head>
+<body>
+<center>
+<div class="field">
+<div class="cell" id="cell1" onclick='mobilePress("#cell1");'></div>
+<div class="cell" id="cell2" onclick='mobilePress("#cell2");'></div>
+<div class="cell" id="cell3" onclick='mobilePress("#cell3");'></div>
+<div class="cell" id="cell4" onclick='mobilePress("#cell4");'></div>
+<div class="cell" id="cell5" onclick='mobilePress("#cell5");'></div>
+<div class="cell" id="cell6" onclick='mobilePress("#cell6");'></div>
+<div class="cell" id="cell7" onclick='mobilePress("#cell7");'></div>
+<div class="cell" id="cell8" onclick='mobilePress("#cell8");'></div>
+<div class="cell" id="cell9" onclick='mobilePress("#cell9");'></div>
+</div><br />
+<button id="btn" onclick="start();">Начать</button><br />
+<div class="result"> </div>
+<a style="color:blue;text-decoration:underline;" onclick="if(x==0){document.querySelector('.ht').style.display='inherit';x=1;} else{document.querySelector('.ht').style.display='none';x=0;}">Управление</a>
+<center class='ht' style="display:none">
+Нажимай на клетки или соответствующие кнопки цифр, расположенных в форме такого же поля справа.
+</center>
+</center>
+<script>
+var c = 0;
+var a = false;
+var x = 0;
+</script>
+</body>
+</html>
