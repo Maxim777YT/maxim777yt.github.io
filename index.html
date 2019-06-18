@@ -45,10 +45,12 @@ height: 863px;
 </div>
 <script>
 function screen() {
+var main = document.querySelector(".main");
 var pageBox = document.querySelector(".pageBox");
 if(window.innerHeight > window.innerWidth) {
 pageBox.style.width = window.innerWidth + "px";
 pageBox.style.height = 863/(1260/window.innerWidth) + "px";
+main.style.width = "30%";
 }
 else {
 pageBox.style.width = window.innerWidth + "px";
