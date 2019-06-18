@@ -58,6 +58,7 @@ alert(x);
 <input type='submit' class='btn' value='Развернуть' onclick='turn();'></center>
 </form>
 </div>
+<script>
 function screen() {
 var pageBox = document.querySelector(".pageBox");
 if(window.innerHeight > window.innerWidth) {
@@ -70,7 +71,6 @@ pageBox.style.height = window.innerHeight - 16 + "px";
 }
 }
 setInterval(screen, 1000);
-}
-else {
+</script>
 </body>
 </html>
