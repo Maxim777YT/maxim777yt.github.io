@@ -26,17 +26,6 @@ document.form.input.value = '';
 </center>
 		</div>
 <script>
-function screen() {
-var pageBox = document.querySelector(".pageBox");
-if(window.innerHeight > window.innerWidth) {
-pageBox.style.width = window.innerWidth + "px";
-pageBox.style.height = 863/(1260/window.innerWidth) + "px";
-}
-else {
-pageBox.style.width = window.innerWidth - 14 + "px";
-pageBox.style.height = window.innerHeight - 16 + "px";
-}
-setInterval(screen, 500);
 var a = 0;
 var tM = document.querySelector(".tM");
 var tT = document.querySelector(".tT");
