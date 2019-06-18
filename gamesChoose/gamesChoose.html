@@ -56,6 +56,7 @@ height: 3em;
 </script>
 </head>
 <body>
+<div class="pageBox">
 <center>
 <a href="games/snake.html"><img src="https://i.ibb.co/q10Zmpy/A608-D7-BD-BF2-E-4-CC7-B8-EC-C02781-DC0-A43.png"><a id="href" href="games/snake.html">змейка</a>
 <a href="games/tictactoe.html"><img src="https://i.ibb.co/0cKjTpR/39-CD59-F7-D160-4779-BAA6-186-C024-E28-B4.png"></a><a id="href" href="games/tictactoe.html">крестики-нолики</a>
@@ -63,5 +64,20 @@ height: 3em;
 
 <div id="cs">Больше игр выйдет скоро</div>
 </center>
+</div>
+  <script>
+function screen() {
+var pageBox = document.querySelector(".pageBox");
+if(window.innerHeight > window.innerWidth) {
+pageBox.style.width = window.innerWidth + "px";
+pageBox.style.height = 863/(1260/window.innerWidth) + "px";
+}
+else {
+pageBox.style.width = window.innerWidth - 14 + "px";
+pageBox.style.height = window.innerHeight - 16 + "px";
+}
+}
+setInterval(screen, 1000);
+  </script>
 </body>
 </html>
