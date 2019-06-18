@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru_RU">
+<head>
+<style>
+.input {
+width: 120vmin;
+height: 6vmin;
+font-size: 4.44vmin;
+margin: 5vmin;
+background: linear-gradient(90deg, rgba(66, 241, 244, .1), rgba(145, 245, 247, .2));
+color: rgba(0, 0, 0, .5);
+border: 1vmin solid rgba(55, 230, 238, .7);
+border-radius: 3.7vmin;
+box-shadow: inset -2vmin -1vmin 3vmin rgba(48, 218, 225, .8), inset 1vmin 1vmin 1vmin rgba(48, 218, 225, .3);
+}
+.btn {
+width: 60vmin;
+height: 60vmin;
+border: 7.5vmin double linear-gradient(90deg, #ccc, #fff);
+border-radius: 30vmin;
+background: linear-gradient(135deg, rgba(255, 0, 0, .5), rgba(255, 0, 0, .8), rgb(255, 0, 0));
+font-size: 7.5vmin;
+color: #fff;
+font-family: arial;
+text-shadow: 0 1px 0 #ccc, 0 1px 15px rgba(0, 0, 0, .2), 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 15px 30px rgba(0, 0, 0, .5), 0 5px 0 #ccc;
+margin: 5vmin;
+box-shadow: 0 1px 0 #f00, 0 1px 15px rgba(255, 0, 0, .2), 0 2px 0 #f00, 0 3px 0 #f00, 0 4px 0 #f00, 0 5px 0 #f00, 0 6px 0 #f00, 0 7px 0 #f00, 0 8px 0 #f00, 0 9px 0 #f00, 0 10px 0 #f00, 0 11px 0 #f00, 0 15px 30px rgba(255, 0, 0, .3), 0 12px 0 #f00, 0 13px 0 #f00, 0 14px 0 #f00, 0 15px 0 #f00, 0 16px 0 #f00, 0 17px 0 #f00, 0 18px 0 #f00, 0 19px 0 #f00, 0 15px 1px rgba(255, 0, 0, .45), 0 20px 0 #f00,0 21px 0 #f00, 0 22px 0 #f00, 0 23px 0 #f00, 0 24px 0 #f00, 0 25px 0 #f00, 0 26px 0 #f00, 0 27px 0 #f00, 0 28px 0 #f00, 0 29px 0 #f00, 0 30px 0 #f00, 0 31px 0 #f00, 0 2px 0 #f00, 0 32px 0 #f00, 0 33px 0 #f00, 0 34px 0 #f00, 0 35px 0 #f00, 0 36px 0 #f00, 0 37px 0 #f00, 0 38px 0 #f00, 0 39px 0 #f00, 0 40px 0 #f00, 0 41px 0 #f00, 0 30px 2px rgba(255, 0, 0, .6), 0 42px 0 #f00;
+}
+body {
+background-color: white;
+}
+form {
+background-color: white;
+height: 100vmin;
+}
+</style>
+<script>
+var input;
+var x;
+var a;
+function turn() {
+input = document.form.input.value;
+a = "";
+x = "";
+for(var i = 0; i < input.length; i++) {
+a = input[input.length-i-1];
+x=x+a;
+}
+document.form.input.value=x;
+alert(x);
+}
+</script>
+</head>
+<body>
+<form name="form">
+<center><input type='text' name="input" class='input' placeholder='Напиши сюда слово/предложение, чтобы развернуть его!' required><br />
+<input type='submit' class='btn' value='Развернуть' onclick='turn();'></center>
+</form>
+</body>
+</html>
