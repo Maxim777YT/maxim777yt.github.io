@@ -4,6 +4,7 @@
 		<title>Morse Convertor</title>
 	</head>
 	<body>
+		<div class="pageBox">
 	<center><form name="form">
 	<input class="input" name="input"></form>
 	<br />
@@ -23,7 +24,20 @@ document.form.input.value = '';
 <button onclick="l();" class="lang">Language</button>
 <div>If you tap "Morse to text" and don't see your letter - there was a mistake or a russian letter.</div>
 </center>
+		</div>
 <script>
+function screen() {
+var pageBox = document.querySelector(".pageBox");
+if(window.innerHeight > window.innerWidth) {
+pageBox.style.width = window.innerWidth + "px";
+pageBox.style.height = 863/(1260/window.innerWidth) + "px";
+}
+else {
+pageBox.style.width = window.innerWidth - 14 + "px";
+pageBox.style.height = window.innerHeight - 16 + "px";
+}
+}
+setInterval(screen, 1000);
 var a = 0;
 var tM = document.querySelector(".tM");
 var tT = document.querySelector(".tT");
