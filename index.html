@@ -21,7 +21,7 @@ margin-left: 15px;
 }
 .main {
 background:rgba(255,255,255,0.8);
-width: 20%;
+width: 30%;
 height: 150px;
 }
 body {
@@ -29,13 +29,33 @@ background: url("0101.jpg");
 background-size: 130%;
 background-repeat: no-repeat;
 }
+.pageBox {
+width: 1260px;
+height: 863px;
+}
 </style>
 </head>
 <body>
+<div class="pageBox">
 <div class='main'>
 <div class='div'>разделы:</div><br />
 <a href="gamesChoose/gamesChoose.html">Игры</a><br /><br />
 <a href="OC/OC.html">Другие программы</a><br />
 </div>
+</div>
+<script>
+function screen() {
+var pageBox = document.querySelector(".pageBox");
+if(window.innerHeight > window.innerWidth) {
+pageBox.style.width = window.innerWidth + "px";
+pageBox.style.height = 863/(1260/window.innerWidth) + "px";
+}
+else {
+pageBox.style.width = window.innerWidth + "px";
+pageBox.style.height = window.innerHeight + "px";
+}
+}
+setInterval(screen, 1000);
+</script>
 </body>
 </html>
