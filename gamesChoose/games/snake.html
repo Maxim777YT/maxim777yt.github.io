@@ -50,6 +50,11 @@ font-size: 3em;
 margin-bottom: 50px;
 background: linear-gradient(45deg, #ccc, #ddd);
 }
+.restart {
+color: blue;
+text-decoration: underline;
+font-size: 1.5em;
+}
 </style>
 <script>
 
@@ -61,7 +66,7 @@ background: linear-gradient(45deg, #ccc, #ddd);
 let ce = document.createElement("center");
 document.body.appendChild(ce);
 ce.classList.add("scoreCenter");
-ce.innerHTML = "Score: ";
+ce.innerHTML = "очки: ";
 let sc = document.createElement("div");
 ce.appendChild(sc);
 sc.classList.add("score");
@@ -75,6 +80,15 @@ appleSound.setAttribute("src", "https://mail-attachment.googleusercontent.com/at
 let field = document.createElement("div");
 document.body.appendChild(field);
 field.classList.add("field");
+
+let c1 = document.createElement("center");
+document.body.appendChild(c1);
+let restart = document.createElement('a');
+restart.classList.add("restart");
+restart.setAttribute("href", '');
+restart.innerHTML = "Начать заново";
+c1.appendChild(restart);
+restart.style.display = 'none';
 
 for(let i=1; i<101; i++) {
 let excel = document.createElement("div");
@@ -158,6 +172,7 @@ else {
 clearInterval(interval);
 document.querySelector(".field").style.background = "url(https://i.ibb.co/55LD8GT/EF10653-B-442-A-480-B-A516-EBC9-DAAC3-BD8.png)";
 document.querySelector(".field").style.backgroundSize = 'cover';
+restart.style.display = 'inherit';
 }
 }
 else if(direction == 'left') {
@@ -168,6 +183,7 @@ else {
 clearInterval(interval);
 document.querySelector(".field").style.background = "url(https://i.ibb.co/55LD8GT/EF10653-B-442-A-480-B-A516-EBC9-DAAC3-BD8.png)";
 document.querySelector(".field").style.backgroundSize = 'cover';
+restart.style.display = 'inherit';
 }
 }
 else if(direction == 'up') {
@@ -178,6 +194,7 @@ else {
 clearInterval(interval);
 document.querySelector(".field").style.background = "url(https://i.ibb.co/55LD8GT/EF10653-B-442-A-480-B-A516-EBC9-DAAC3-BD8.png)";
 document.querySelector(".field").style.backgroundSize = 'cover';
+restart.style.display = 'inherit';
 }
 }
 else if(direction == 'down') {
@@ -188,6 +205,7 @@ else {
 clearInterval(interval);
 document.querySelector(".field").style.background = "url(https://i.ibb.co/55LD8GT/EF10653-B-442-A-480-B-A516-EBC9-DAAC3-BD8.png)";
 document.querySelector(".field").style.backgroundSize = 'cover';
+restart.style.display = 'inherit';
 }
 }
 
@@ -207,6 +225,7 @@ if(snakeBody[0].classList.contains("snakeBody")) {
 clearInterval(interval);
 document.querySelector(".field").style.background = "url(https://i.ibb.co/55LD8GT/EF10653-B-442-A-480-B-A516-EBC9-DAAC3-BD8.png)";
 document.querySelector(".field").style.backgroundSize = 'cover';
+restart.style.display = 'inherit';
 }
 
 
