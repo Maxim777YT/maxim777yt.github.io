@@ -63,6 +63,7 @@ font-size: 1.5em;
 <body>
 
 <script>
+  alert("Эта змейка работает управляется только клавишами W, A, S, D или стрелками вправо, влево, вперёд, назад на клавиатуре. Если вы сейчас смотрите в телефон и не имеете доступа к клаватуре, сожалею, вы не можете так играть.");
 let pageBox = document.createElement("div");
 document.body.appendChild(pageBox);
 pageBox.classList.add("pageBox");
@@ -266,11 +267,8 @@ steps = false;
 });
 function screen() {
 var pageBox = document.querySelector(".pageBox");
-if(window.innerHeight > window.innerWidth) {
-alert("Эта змейка работает управляется только клавишами W, A, S, D или стрелками вправо, влево, вперёд, назад на клавиатуре. Если вы сейчас смотрите в телефон и не имеете доступа к клаватуре, сожалею, вы не можете так играть.");
-}
+if(window.innerHeight > window.innerWidth) {}
 else {
-alert("Эта змейка работает управляется только клавишами W, A, S, D или стрелками вправо, влево, вперёд, назад на клавиатуре. Если вы сейчас смотрите в телефон и не имеете доступа к клаватуре, сожалею, вы не можете так играть.");
 pageBox.style.width = window.innerWidth - 40 + "px";
 pageBox.style.height = window.innerHeight - 45 + "px";
 }
