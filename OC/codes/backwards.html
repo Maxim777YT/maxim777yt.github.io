@@ -52,9 +52,25 @@ alert(x);
 </script>
 </head>
 <body>
+<div class="pageBox">
 <form name="form">
 <center><input type='text' name="input" class='input' placeholder='Напиши сюда слово/предложение, чтобы развернуть его!' required><br />
 <input type='submit' class='btn' value='Развернуть' onclick='turn();'></center>
 </form>
+</div>
+function screen() {
+var pageBox = document.querySelector(".pageBox");
+if(window.innerHeight > window.innerWidth) {
+pageBox.style.width = window.innerWidth + "px";
+pageBox.style.height = 863/(1260/window.innerWidth) + "px";
+}
+else {
+pageBox.style.width = window.innerWidth - 14 + "px";
+pageBox.style.height = window.innerHeight - 16 + "px";
+}
+}
+setInterval(screen, 1000);
+}
+else {
 </body>
 </html>
