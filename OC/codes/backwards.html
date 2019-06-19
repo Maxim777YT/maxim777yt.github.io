@@ -34,7 +34,13 @@ background-color: white;
 height: 100vmin;
 }
 </style>
-<script>
+</head>
+<body>
+<form name="form">
+<center><input type='text' name="input" class='input' placeholder='Напиши сюда слово/предложение, чтобы развернуть его!' required><br />
+<input type='submit' class='btn' value='Развернуть'></center>
+</form>
+  <script>
 var input;
 var x;
 var a;
@@ -51,11 +57,5 @@ document.form.input.value=x;
 alert(x);
 }
 </script>
-</head>
-<body>
-<form name="form">
-<center><input type='text' name="input" class='input' placeholder='Напиши сюда слово/предложение, чтобы развернуть его!' required><br />
-<input type='submit' class='btn' value='Развернуть'></center>
-</form>
 </body>
 </html>
