@@ -38,14 +38,13 @@ height: 100vmin;
 <body>
 <form name="form">
 <center><input type='text' name="input" class='input' placeholder='Напиши сюда слово/предложение, чтобы развернуть его!' required><br />
-<input type='submit' class='btn' value='Развернуть'></center>
+<input type='submit' class='btn' value='Развернуть' onsubmit="turn();"></center>
 </form>
   <script>
 var input;
 var x;
 var a;
-var btn = document.querySelector(".btn");
-btn.onsubmit = function() {
+function turn() {
 input = document.form.input.value;
 a = "";
 x = "";
