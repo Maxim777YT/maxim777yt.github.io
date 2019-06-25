@@ -84,7 +84,9 @@ background: #eee;
 </style>
 <script>
 function start() {
+if(g == false) {
 a = true;
+g = true;
 var btn = document.querySelector("#btn");
 btn.style.display = "none";
 document.querySelector(".result").innerHTML = " ";
@@ -92,6 +94,7 @@ let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"),
 for(let i=0; i<9; i++) {
 cells[i].style.background = "transparent";
 cells[i].removeAttribute("char");
+}
 }
 }
 var xAudio = document.createElement("audio");
@@ -274,11 +277,13 @@ if(i==0&&k==1&&j==2||i==0&&k==3&&j==6||i==0&&k==4&&j==8||i==2&&k==4&&j==6||i==2&
 if(cells[i].getAttribute("char") === "x") {
 document.querySelector(".result").innerHTML = "крестики выиграли!";
 a = false;
+g = false;
 return true;
 }
 else if(cells[i].getAttribute("char") === "0") {
 document.querySelector(".result").innerHTML = "нолики выиграли!";
 a = false;
+g = false;
 return true;
 }
 else {}
@@ -288,6 +293,8 @@ document.querySelector("#btn").style.display = "inherit";
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 if(cells[0].getAttribute("char") && cells[1].getAttribute("char") && cells[2].getAttribute("char") && cells[3].getAttribute("char") && cells[4].getAttribute("char") && cells[5].getAttribute("char") && cells[6].getAttribute("char") && cells[7].getAttribute("char") && cells[8].getAttribute("char")) {
 document.querySelector(".result").innerHTML = "ничья!";
+a = false;
+g = false;
 }
 }
 }
@@ -353,6 +360,7 @@ let checkInt = setInterval(check, 1000/24);
 var c = 0;
 var a = false;
 var x = 0;
+var g = false;
 </script>
 </body>
 </html>
