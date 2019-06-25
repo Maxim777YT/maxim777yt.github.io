@@ -85,7 +85,8 @@ background: #eee;
 <script>
 function start() {
 a = true;
-document.querySelector("#btn").style.display = "none";
+var btn = document.querySelector("#btn");
+btn.style.display = "none";
 document.querySelector(".result").innerHTML = " ";
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
