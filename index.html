@@ -13,9 +13,9 @@ margin-left: 15px;
 }
 .div {
 font-variant: small-caps;
-color: #fff900;
+color: #00ffff;
 font-family: Arial;
-text-shadow: 0 1px 0 #ffe700, 0 1px 0.7vmin rgba(255, 225, 0, .3), 0 1px 0.5vmin rgba(0, 0, 0, .2), 0 0.1vmin 0 #ffe700, 0 0.2vmin 0 #ffe700, 0 0.3vmin 0 #ffe700, 0 0.4vmin 0 #ffe700, 0 0.5vmin 0 #ffe700, 0 0.6vmin 0 #ffe700, 0 1px 0.7vmin rgba(0, 0, 0, .3), 0 0.7vmin 0 #ffe700;
+text-shadow: 0 0 1.5px black;
 font-size: 3em;
 margin-left: 15px;
 }
@@ -23,6 +23,9 @@ margin-left: 15px;
 background:rgba(255,255,255,0.8);
 width: 70%;
 height: 150px;
+animation-name: anim1;
+animation-duration: 5s;
+animation-timing-function: ease-in-out;
 }
 body {
 background: url("0101.jpg");
@@ -32,6 +35,33 @@ background-repeat: no-repeat;
 .pageBox {
 width: 1260px;
 height: 863px;
+}
+@keyframes anim1 {
+0% {
+margin-right: 100%;
+margin-left: 0;
+}
+70% {
+margin-right: 0;
+margin-left: 7%;
+}
+73% {
+margin-left: 7.3%;
+}
+75% {
+margin-left: 7.4%;
+}
+77% {
+margin-left: 7.3%;
+}
+80% {
+margin-right: 0;
+margin-left: 7%;
+}
+100% {
+margin-right: 0;
+margin-left: 0;
+}
 }
 </style>
 </head>
