@@ -71,10 +71,7 @@ height: 1.7em;
 <script>
 function screen() {
 var pageBox = document.querySelector(".pageBox");
-if(window.innerHeight > window.innerWidth) {
-pageBox.style.width = window.innerWidth + "px";
-pageBox.style.height = 863/(1260/window.innerWidth) + "px";
-}
+if(window.innerHeight > window.innerWidth) {}
 else {}
 }
 setInterval(screen, 5);
