@@ -22,7 +22,9 @@ border: 1px solid black;
 
 color: black;
 	
-font-size: 12pt;
+font-size: 2em;
+	
+width: 10%;
 	
 font-family: Arial;
 
@@ -331,21 +333,13 @@ if (posY + ballRadius >= paddleY + paddleHeight / 2) {
   if (posX + ballRadius <= paddleX + paddleWidth) {
 
 	if (posX - ballRadius >= paddleX) {
+		
+	if(speedY != -7) {
 
 	speedY = -7;
 		
-	if(db == false) {
-		
-	db = true;
-		
-	let to = setTimeout(function() {
-		
-	db = false;
-		
-	}, 3000);
-		
 	scrwrt();
-	
+		
 	}
 
 	}
