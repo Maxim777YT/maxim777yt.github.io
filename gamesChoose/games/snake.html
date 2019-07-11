@@ -127,6 +127,30 @@ let rbtn = document.createElement("button");
 cont.appendChild(rbtn);
 rbtn.classList.add("cbtn");
 rbtn.innerHTML = ">";
+ubtn.onclick = function() {
+ if(steps==true && direction != "down") {
+  direction = "up";
+  steps = false;
+ } 
+}
+lbtn.onclick = function() {
+ if(steps==true && direction != "right") {
+  direction = "left";
+  steps = false;
+ } 
+}
+dbtn.onclick = function() {
+ if(steps==true && direction != "up") {
+  direction = "down";
+  steps = false;
+ } 
+}
+rbtn.onclick = function() {
+ if(steps==true && direction != "left") {
+  direction = "right;
+  steps = false;
+ } 
+}
 
 for(let i=1; i<101; i++) {
 let excel = document.createElement("div");
