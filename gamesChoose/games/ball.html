@@ -159,6 +159,14 @@ int1 = setInterval(draw, 1000/30);
 int2 = setInterval(scrwrt, 5000);
 
 }
+	
+window.addEventListener("keydown", function(e) {
+
+if(e.keyCode == 37 || e.keyCode == 65) left();
+	
+if(e.keyCode == 39 || e.keyCode == 68) right();
+
+});
 
 </script>
 
