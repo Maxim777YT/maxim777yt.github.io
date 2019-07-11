@@ -11,8 +11,8 @@
 body {
 
 background: linear-gradient(45deg, #f06, yellow);
-
-background-size: 150%;
+	
+background-size: 200%;
 
 }
 
@@ -162,9 +162,17 @@ int2 = setInterval(scrwrt, 5000);
 	
 window.addEventListener("keydown", function(e) {
 
-if(e.keyCode == 37 || e.keyCode == 65) left();
+if(e.keyCode == 37 || e.keyCode == 65) {
 	
-if(e.keyCode == 39 || e.keyCode == 68) right();
+left();
+	
+}
+	
+else if(e.keyCode == 39 || e.keyCode == 68) {
+	
+right();
+	
+}
 
 });
 
