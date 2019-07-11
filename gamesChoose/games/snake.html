@@ -112,11 +112,13 @@ showbtn.innerHTML = "Управление для телефонов ВКЛ/ВЫ�
 showbtn.setAttribute("onclick", "mbshow();");
 function mbshow() {
 let btns = document.getElementsByClassName("cbtn");
-if(btns.style.display=="none") {
-  btns.style.display = "inherit";
+btns.forEach(btn => {
+if(btn.style.display=="none") {
+  btn.style.display = "inherit";
 } else {
- btns.style.display = "none"; 
+ btn.style.display = "none"; 
 }
+});
 }
 let ubtn = document.createElement("button");
 cont.appendChild(ubtn);
