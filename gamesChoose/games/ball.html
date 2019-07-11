@@ -20,9 +20,11 @@ background-size: 200%;
 
 border: 1px solid black;
 
-height: 7vmin;
-
-width: 7vmin;
+color: black;
+	
+font-size: 12pt;
+	
+font-family: Arial;
 
 }
 
@@ -124,17 +126,7 @@ a = 0;
 
 score = document.getElementById("score");
 
-scr = score.getContext("2d");
-
-scr.clearRect(0, 0, score.width, score.height)
-
-scr.textAlign="center";
-
-scr.font="bold 12pt cursive";
-
-scr.fillStyle = "black";
-
-scr.fillText(a, 10, 20);
+score.innerHTML = a;
 
 canvas = document.getElementById("canvas");
 
@@ -182,7 +174,7 @@ right();
 
 <body>
 
-<canvas id="score" class="score" width="25" height="25"></canvas>
+<div id="score" class="score"></div>
 
 <center><canvas id="canvas" class="canvas" width="350" height="350"></canvas></center>
 
@@ -233,6 +225,8 @@ var int1;
 var int2;
 
 var rand;
+	
+var db = false;
 
 function draw() {
 
@@ -248,21 +242,13 @@ function scrwrt() {
 
 	score = document.getElementById("score");
 
-	scr = score.getContext("2d");
-
-	scr.clearRect(0, 0, score.width, score.height)
-
-	scr.textAlign="center";
-
-	scr.font="bold 12pt cursive";
-
-	scr.fillStyle = "black";
-
-	scr.fillText(a, 10, 20);
+	score.innerHTML = a;
 
 }
 
 function drawBall() {
+	
+db = false;
 
 c = Math.ceil(Math.random() * 5);
 
@@ -324,17 +310,7 @@ a = 0;
 
 score = document.getElementById("score");
 
-scr = score.getContext("2d");
-
-scr.clearRect(0, 0, score.width, score.height)
-
-scr.textAlign="center";
-
-scr.font="bold 12pt cursive";
-
-scr.fillStyle = "black";
-
-scr.fillText(a, 10, 20);
+score.innerHTML = a;
 
 }
 
@@ -357,6 +333,20 @@ if (posY + ballRadius >= paddleY + paddleHeight / 2) {
 	if (posX - ballRadius >= paddleX) {
 
 	speedY = -7;
+		
+	if(db == false) {
+		
+	db = true;
+		
+	let to = setTimeout(function() {
+		
+	db = false;
+		
+	}, 3000);
+		
+	scrwrt();
+	
+	}
 
 	}
 
@@ -405,8 +395,6 @@ ctx.fillRect(paddleX, paddleY, paddleWidth, paddleHeight);
 }
 
 int1 = setInterval(draw, 1000/30);
-
-int2 = setInterval(scrwrt, 5000);
 
 </script>
 
