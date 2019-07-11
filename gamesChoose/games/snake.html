@@ -107,8 +107,9 @@ restart.innerHTML = "Начать заново";
 c1.appendChild(restart);
 restart.style.display = 'none';
 
-let cont = document.createElement("center");
-document.body.appendChild(cont);
+let cc = document.createElement("center");
+let cont = document.createElement("div");
+cc.appendChild(cont);
 cont.classList.add("cont");
 let showbtn = document.createElement("a");
 cont.appendChild(showbtn);
@@ -121,12 +122,14 @@ if(btn.style.display=="none") {
  btn.style.display = "none"; 
 }
 }
+let br1 = document.createElement("br");
+cont.appendChild(br1);
 let ubtn = document.createElement("button");
 cont.appendChild(ubtn);
 ubtn.classList.add("cbtn");
 ubtn.innerHTML = "/\\";
-let br = document.createElement("br");
-cont.appendChild(br);
+let br2 = document.createElement("br");
+cont.appendChild(br2);
 let lbtn = document.createElement("button");
 cont.appendChild(lbtn);
 lbtn.classList.add("cbtn");
