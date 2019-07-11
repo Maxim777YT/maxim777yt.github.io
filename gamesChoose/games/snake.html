@@ -105,8 +105,8 @@ let cont = document.createElement("center");
 document.body.appendChild(cont);
 cont.classList.add("cont");
 let showbtn = document.createElement("a");
-a.innerHTML = "Управление для телефонов ВКЛ/ВЫКЛ";
-a.setAttribute("onclick", "mbshow();");
+showbtn.innerHTML = "Управление для телефонов ВКЛ/ВЫКЛ";
+showbtn.setAttribute("onclick", "mbshow();");
 function mbshow() {
 let cont = document.querySelector(".cont");
 if(cont.style.display=="none") {
