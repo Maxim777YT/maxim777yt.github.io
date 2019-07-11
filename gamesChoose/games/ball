@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Ball game!</title>
+
+<style>
+
+body {
+
+background: linear-gradient(45deg, #f06, yellow);
+
+background-size: 150%;
+
+}
+
+.score {
+
+border: 1px solid black;
+
+height: 7vmin;
+
+width: 7vmin;
+
+}
+
+.buttons {
+
+width: 80vmin;
+
+display: flex;
+
+flex-direction:row;
+
+height: 15vmin;
+
+flex-wrap: wrap;
+
+background: inherit;
+
+align-items: center;
+
+justify-content: center;
+
+}
+
+.button {
+
+background: linear-gradient(45deg, #e8ecf2, #c7c9cc);
+
+width: 10vmin;
+
+height: 10vmin;
+
+font-size: 7vmin;
+
+text-shadow: 0 1px 0 #111, 0 1px 15px rgba(0, 0, 0, .2), 0 2px 0 #222, 0 3px 0 #333, 0 4px 0 #444, 0 5px 0 #555, 0 7px 10px rgba(0, 0, 0, .5);
+
+}
+
+.space {
+
+height: 10vmin;
+
+width: 56vmin;
+
+background: inherit;
+
+font-size: 7.5vmin;
+
+font-family: arial;
+
+font-weight: bold;
+
+color: #fff;
+
+text-shadow: 0 1px 0 #ccc, 0 1px 15px rgba(0, 0, 0, .2), 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 7px 10px rgba(0, 0, 0, .5);
+
+}
+
+.canvas {
+
+width: 70vmin;
+
+height: 70vmin;
+
+border:  1px solid gray;
+
+margin: 1vmin;
+
+padding: 1vmin;
+
+
+
+</style>
+
+<script>
+
+var canvas;
+
+var ctx;
+
+function left() {
+
+paddleX -= 27.5;
+
+}
+
+function right() {
+
+paddleX += 27.5;
+
+}
+
+function restart() {
+
+clearInterval(int1);
+
+clearInterval(int2);
+
+a = 0;
+
+score = document.getElementById("score");
+
+scr = score.getContext("2d");
+
+scr.clearRect(0, 0, score.width, score.height)
+
+scr.textAlign="center";
+
+scr.font="bold 12pt cursive";
+
+scr.fillStyle = "black";
+
+scr.fillText(a, 10, 20);
+
+canvas = document.getElementById("canvas");
+
+ctx = canvas.getContext("2d");
+
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+paddleX = canvas.width / 2 - paddleWidth / 2;
+
+paddleY = canvas.height - 20;
+
+posX = 25;
+
+posY = 25;
+
+speedX = 6;
+
+speedY = 3;
+
+int1 = setInterval(draw, 1000/30);
+
+int2 = setInterval(scrwrt, 5000);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<canvas id="score" class="score" width="25" height="25"></canvas>
+
+<center><canvas id="canvas" class="canvas" width="350" height="350"></canvas></center>
+
+<center><div class="buttons">
+
+<a class="button" onclick="left();"> < </a><a class="space" onclick="restart();">Restart</a><a class="button" onclick="right();"> > </a>
+
+</div></center>
+
+<script>
+
+var posX = 25;
+
+var posY = 25;
+
+var ballRadius = 25;
+
+var speedX = 6;
+
+var speedY = 3;
+
+var paddleWidth = 75;
+
+var paddleHeight = 10;
+
+var canvas = document.getElementById("canvas");
+
+var paddleX = canvas.width / 2 - paddleWidth / 2;
+
+var paddleY = canvas.height - 20;
+
+canvas = document.getElementById("canvas");
+
+var ctx = canvas.getContext("2d");
+
+var c;
+
+var a = 0;
+
+var b;
+
+var score;
+
+var scr;
+
+var int1;
+
+var int2;
+
+var rand;
+
+function draw() {
+
+drawBall();
+
+drawPaddle();
+
+}
+
+function scrwrt() {
+
+	a++;
+
+	score = document.getElementById("score");
+
+	scr = score.getContext("2d");
+
+	scr.clearRect(0, 0, score.width, score.height)
+
+	scr.textAlign="center";
+
+	scr.font="bold 12pt cursive";
+
+	scr.fillStyle = "black";
+
+	scr.fillText(a, 10, 20);
+
+}
+
+function drawBall() {
+
+c = Math.ceil(Math.random() * 5);
+
+switch (c) {
+
+	case 1:
+
+		b = 4;
+
+		break;
+
+	case 2:
+
+		b = 5;
+
+		break;
+
+	case 3:
+
+		b = 6;
+
+		break;
+
+	case 4:
+
+		b = 7;
+
+		break;
+
+	case 5:
+
+		b = 8;
+
+		break;
+
+	default:
+
+		b = 6;
+
+}
+
+if (posX + speedX > canvas.width) {
+
+speedX = -6;
+
+}
+
+if (posY > canvas.height) {
+
+clearInterval(int1);
+
+clearInterval(int2);
+
+speedY = 0;
+
+posY = -100;
+
+a = 0;
+
+score = document.getElementById("score");
+
+scr = score.getContext("2d");
+
+scr.clearRect(0, 0, score.width, score.height)
+
+scr.textAlign="center";
+
+scr.font="bold 12pt cursive";
+
+scr.fillStyle = "black";
+
+scr.fillText(a, 10, 20);
+
+}
+
+if (posX + speedX < 0) {
+
+speedX = b;
+
+}
+
+if (posY + speedY < 0) {
+
+speedY = b;
+
+}
+
+if (posY + ballRadius >= paddleY + paddleHeight / 2) {
+
+  if (posX + ballRadius <= paddleX + paddleWidth) {
+
+	if (posX - ballRadius >= paddleX) {
+
+	speedY = -7;
+
+	}
+
+  }
+
+}
+
+ctx.fillStyle = "red";
+
+c = Math.ceil(Math.random() * 5);
+
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+ctx.beginPath();
+
+ctx.fillStyle = "red";
+
+ctx.arc(posX, posY, ballRadius, 0, 180);
+
+ctx.stroke();
+
+posX += speedX;
+
+posY += speedY;
+
+}
+
+function drawPaddle() {
+
+if (paddleX + 55 > canvas.width) {
+
+paddleX -= 27.5;
+
+}
+
+if (paddleX < 0) {
+
+paddleX += 27.5;
+
+}
+
+ctx.fillStyle = "black";
+
+ctx.fillRect(paddleX, paddleY, paddleWidth, paddleHeight);
+
+}
+
+int1 = setInterval(draw, 1000/30);
+
+int2 = setInterval(scrwrt, 5000);
+
+</script>
+
+</body>
+
+</html>
