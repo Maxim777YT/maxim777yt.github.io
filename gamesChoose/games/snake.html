@@ -69,10 +69,7 @@ border-radius: 5px;
 }
 .cont {
 direction: row;
-}
-.showbtn {
-color: blue;
-text-decoration: underline;
+margin-top: 15px;
 }
 </style>
 <script>
@@ -110,16 +107,9 @@ restart.innerHTML = "Начать заново";
 c1.appendChild(restart);
 restart.style.display = 'none';
 
-let cc = document.createElement("center");
-document.body.appendChild(cc);
 let cont = document.createElement("center");
 document.body.appendChild(cont);
 cont.classList.add("cont");
-let showbtn = document.createElement("a");
-cc.appendChild(showbtn);
-showbtn.classList.add("showbtn");
-showbtn.innerHTML = "Управление для телефонов ВКЛ/ВЫКЛ";
-showbtn.setAttribute("onclick", "mbshow();");
 let ubtn = document.createElement("button");
 ubtn.classList.add("cbtn");
 ubtn.innerHTML = "/\\";
@@ -136,20 +126,6 @@ let rbtn = document.createElement("button");
 cont.appendChild(rbtn);
 rbtn.classList.add("cbtn");
 rbtn.innerHTML = ">";
-function mbshow() {
-if(ubtn.style.display=="none") {
-  ubtn.style.display = "inherit";
-  lbtn.style.display = "inherit";
-  dbtn.style.display = "inherit";
-  rbtn.style.display = "inherit";
-  cont.style.direction = "row";
-} else {
-  ubtn.style.display = "none";
-  lbtn.style.display = "none";
-  dbtn.style.display = "none";
-  rbtn.style.display = "none";
-}
-}
 
 for(let i=1; i<101; i++) {
 let excel = document.createElement("div");
