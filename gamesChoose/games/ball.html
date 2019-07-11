@@ -308,10 +308,6 @@ posY = -100;
 
 a = 0;
 
-score = document.getElementById("score");
-
-score.innerHTML = a;
-
 }
 
 if (posX + speedX < 0) {
@@ -346,17 +342,17 @@ if (posY + ballRadius >= paddleY + paddleHeight / 2) {
 
 }
 
-ctx.fillStyle = "red";
-
 c = Math.ceil(Math.random() * 5);
 
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 ctx.beginPath();
 
-ctx.fillStyle = "red";
-
 ctx.arc(posX, posY, ballRadius, 0, 180);
+	
+ctx.fillStyle = "#e00";
+	
+ctx.fill();
 
 ctx.stroke();
 
