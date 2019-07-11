@@ -111,14 +111,11 @@ cont.appendChild(showbtn);
 showbtn.innerHTML = "Управление для телефонов ВКЛ/ВЫКЛ";
 showbtn.setAttribute("onclick", "mbshow();");
 function mbshow() {
-let btns = document.getElementsByClassName("cbtn");
-btns.forEach(btn => {
 if(btn.style.display=="none") {
   btn.style.display = "inherit";
 } else {
  btn.style.display = "none"; 
 }
-});
 }
 let ubtn = document.createElement("button");
 cont.appendChild(ubtn);
@@ -138,6 +135,19 @@ let rbtn = document.createElement("button");
 cont.appendChild(rbtn);
 rbtn.classList.add("cbtn");
 rbtn.innerHTML = ">";
+function mbshow() {
+if(ubtn.style.display=="none") {
+  ubtn.style.display = "inherit";
+  lbtn.style.display = "inherit";
+  dbtn.style.display = "inherit";
+  rbtn.style.display = "inherit";
+} else {
+  ubtn.style.display = "none";
+  lbtn.style.display = "none";
+  dbtn.style.display = "none";
+  rbtn.style.display = "none";
+}
+}
 
 for(let i=1; i<101; i++) {
 let excel = document.createElement("div");
