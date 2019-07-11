@@ -66,6 +66,9 @@ height: 50px;
 font-size: 30px;
 margin: 2px;
 }
+.cont {
+display: none;
+}
 </style>
 <script>
 
@@ -110,11 +113,11 @@ cont.appendChild(showbtn);
 showbtn.innerHTML = "Управление для телефонов ВКЛ/ВЫКЛ";
 showbtn.setAttribute("onclick", "mbshow();");
 function mbshow() {
-let cont = document.querySelector(".cont");
-if(cont.style.display=="none") {
-  cont.style.display = "inherit";
+let btns = document.getElementsByClassName(".cbtn");
+if(btns.style.display=="none") {
+  btns.style.display = "inherit";
 } else {
- cont.style.display = "none"; 
+ btns.style.display = "none"; 
 }
 }
 let ubtn = document.createElement("button");
