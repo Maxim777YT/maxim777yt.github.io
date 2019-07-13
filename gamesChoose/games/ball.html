@@ -108,9 +108,51 @@ var canvas;
 
 var ctx;
 	
+var names = require("./bl.json");
+	
 function name() {
 	
+let bl = fs.readFileSync("./bl.json");
+	
+let bf = JSON.parse(bl);
+	
+let n = document.form.name.value;
+	
+if(names[n] === undefined) {
 
+names[n] = {
+
+lg: 0,
+	
+record: 0
+	
+}
+	
+}
+	
+document.querySelector(".highscore").innerHTML = `Рекорд: ${names[n].record}`;
+	
+fs.writeFileSync("./bl.json", JSON.stringify(names));
+	
+}
+	
+function wr() {
+	
+let bl = fs.readFileSync("./bl.json");
+	
+let bf = JSON.parse(bl);
+	
+let n = document.form.name.value;
+	
+let score = document.getElementById("score");
+
+if(Number(score.innerHTML.substring(8, score.innerHTML.length)) > bf[n].record) {
+
+names[n].record = Number(score.innerHTML.substring(8, score.innerHTML.length));
+	
+document.querySelector(".highscore").innerHTML = `Рекорд: ${Number(score.innerHTML.substring(8, score.innerHTML.length))}`;
+	
+}
 	
 }
 
