@@ -192,7 +192,7 @@ function checkCookie() {
 	document.querySelector(".record").innerHTML = `Рекорд: ${ballR}`;
   } else {
      ballR = document.querySelector(".score").innerHTML;
-     if (ballR != "" && user != ballR) {
+     if (ballR != "" && ballR != null) {
       if(ballR > getCookie(ballR)) {
        setCookie("ballR", ballR);
        document.querySelector(".record").innerHTML = `Рекорд: ${ballR}`;
