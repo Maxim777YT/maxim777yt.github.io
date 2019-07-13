@@ -44,7 +44,7 @@ background: url(https://i.ibb.co/1XSq2s0/72-CE15-B0-0-E8-C-4-DE6-91-BF-E22-D689-
 background-size: cover;
 border-radius: 0;
 }
-.scoreCenter, .recordCenter {
+.scoreCenter {
 font-variant: small-caps;
 color: #fff900;
 font-family: Arial;
@@ -52,10 +52,10 @@ text-shadow: -0.5px -0.5px 5px black, 0.5px 0.5px 5px black;
 font-size: 3em;
 margin-top: 0;
 background: linear-gradient(45deg, #ccc, #ddd);
-}
-.score, .record {
-color: red;
 position: fixed;
+}
+.score {
+color: red;
 }
 .restart {
 color: blue;
@@ -92,14 +92,6 @@ let sc = document.createElement("div");
 ce.appendChild(sc);
 sc.classList.add("score");
 sc.innerHTML = "0";
-let rc = document.createElement("center");
-document.body.appendChild(rc);
-rc.classList.add("recordCenter");
-rc.innerHTML = "рекорд: ";
-let record = document.createElement("div");
-rc.appendChild(record);
-record.classList.add("record");
-record.innerHTML = "0";
 let appleSound = document.createElement("audio");
 document.body.appendChild(appleSound);
 appleSound.style.display = "none";
