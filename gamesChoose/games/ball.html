@@ -131,15 +131,15 @@ function getCookie(cname) {
       
 	    c = c.substring(1);
     
-    }
+	  }
     
 	  if (c.indexOf(name) == 0) {
       
 	    return c.substring(name.length, c.length);
     
-    }
+    	}
   
-  }
+  	}
   
 	return "";
 
@@ -154,7 +154,7 @@ function checkCookie() {
    
 	  alert("Привет, " + user);
   
-  } else {
+  	} else {
      
 	  user = prompt("Введи своё имя(ник):","");
     
@@ -162,9 +162,9 @@ function checkCookie() {
        
 	     setCookie("username", user, 30);
      
-     }
+     	  }
   
-  }
+  	}
 
 }
 
