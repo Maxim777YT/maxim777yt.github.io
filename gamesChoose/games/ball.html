@@ -189,8 +189,10 @@ function getCookie(cname) {
 function checkCookie() {
   var ballR=getCookie("ballR");
   if (ballR != "") {
+	if(ballR > getCookie("ballR")) {
 	ballR = document.querySelector(".score").innerHTML;
 	setCookie("ballR", ballR);
+	}
 	document.querySelector(".record").innerHTML = `Рекорд: ${ballR}`;
   } else {
      ballR = document.querySelector(".score").innerHTML;
