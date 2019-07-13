@@ -129,7 +129,7 @@ function getCookie(cname) {
 function checkCookie() {
   var snakeRecord=getCookie("snakeRecord");
   if (snakeRecord != "") {
-    snakeRecord = score.innerHTML;
+    snakeRecord = sc.innerHTML;
     setCookie("snakeRecord", snakeRecord);
     record.innerHTML = snakeRecord;
   } else {
