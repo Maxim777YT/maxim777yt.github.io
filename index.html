@@ -105,17 +105,6 @@ function checkCookie() {
   }
 }
 
-function screen() {
-var pageBox = document.querySelector(".pageBox");
-if(window.innerHeight > window.innerWidth) {
-pageBox.style.width = window.innerWidth + "px";
-pageBox.style.height = 863/(1260/window.innerWidth) + "px";
-}
-else { 
-pageBox.style.width = window.innerWidth + "px";
-pageBox.style.height = window.innerHeight + "px";
-}
-}
 setInterval(screen, 5);
 </script>
 </body>
