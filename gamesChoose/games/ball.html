@@ -167,6 +167,41 @@ right();
 }
 
 });
+	
+function setCookie(cname,cvalue) {
+  document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function checkCookie() {
+  var ballR=getCookie("ballR");
+  if (ballR != "") {
+	document.querySelector(".record").innerHTML = `Рекорд: ${ballR}`;
+  } else {
+     ballR = document.querySelector(".score").innerHTML;
+     if (ballR != "" && user != ballR) {
+      if(ballR > getCookie(ballR)) {
+       setCookie("ballR", ballR);
+       document.querySelector(".record").innerHTML = `Рекорд: ${ballR}`;
+      }
+     }
+  }
+}
+	
+setInterval(checkCookie, 100);
 
 </script>
 
@@ -174,7 +209,7 @@ right();
 
 <body>
 
-<div id="score" class="score">0</div>
+<div id="score" class="score">0</div><div class="record>Рекорд: 0</div>
 	
 <center><canvas id="canvas" class="canvas" width="350" height="350"></canvas></center>
 
