@@ -110,7 +110,7 @@ var ctx;
 	
 var names = require("./bl.json");
 	
-function name() {
+function nmw() {
 	
 let bl = fs.readFileSync("./bl.json");
 	
@@ -200,8 +200,6 @@ speedY = 3;
 
 int1 = setInterval(draw, 1000/30);
 
-int2 = setInterval(scrwrt, 5000);
-
 }
 	
 window.addEventListener("keydown", function(e) {
@@ -226,7 +224,7 @@ right();
 
 <body>
 
-<div id="score" class="score">0</div><form style="margin-left: 10px;" class="form" name="form"><input class="name" type="text" name="name" placeholder="Ваше имя/ник" /><input type="button" class="nb" onclick="name();"></form><div class="highscore">Рекорд: 0</div><div class="best">Лучшая игра: 0</div>
+<div id="score" class="score">0</div><form class="form" name="form"><input class="name" type="text" name="name" placeholder="Ваше имя/ник" /><input type="button" class="nb" onclick="nmw();"></form><div class="highscore">Рекорд: 0</div><div class="best">Лучшая игра: 0</div>
 
 <center><canvas id="canvas" class="canvas" width="350" height="350"></canvas></center>
 
