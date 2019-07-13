@@ -75,6 +75,10 @@ background: lightGray;
 direction: row;
 margin-top: 50px;
 }
+.record {
+position: fixed;
+top: 5em;
+}
 </style>
 <script>
 
@@ -91,6 +95,10 @@ let sc = document.createElement("div");
 ce.appendChild(sc);
 sc.classList.add("score");
 sc.innerHTML = "0";
+let rc = document.createElement("div");
+document.body.appendChild(rc);
+rc.classList.add("record");
+rc.innerHTML = "Рекорд: 0";
 let appleSound = document.createElement("audio");
 document.body.appendChild(appleSound);
 appleSound.style.display = "none";
@@ -152,6 +160,45 @@ rbtn.onclick = function() {
   steps = false;
  } 
 }
+
+function setCookie(cname,cvalue) {
+  document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+function checkCookie() {
+  var snakeR=getCookie("snakeR");
+  if (snakeR != "") {
+	if(document.querySelector(".score").innerHTML > getCookie("snakeR")) {
+	snakeR = document.querySelector(".score").innerHTML;
+	setCookie("snakeR", snakeR);
+	}
+	document.querySelector(".record").innerHTML = `Рекорд: ${snakeR}`;
+  } else {
+     snakeR = document.querySelector(".score").innerHTML;
+     if (snakeR != "" && snakeR != null) {
+      if(snakeR > getCookie(snakeR)) {
+       setCookie("snakeR", snakeR);
+       document.querySelector(".record").innerHTML = `Рекорд: ${snakeR}`;
+      }
+     }
+  }
+}
+	
+setInterval(checkCookie, 100);
 
 for(let i=1; i<101; i++) {
 let excel = document.createElement("div");
