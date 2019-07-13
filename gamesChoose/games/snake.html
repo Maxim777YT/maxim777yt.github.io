@@ -97,7 +97,7 @@ document.body.appendChild(rc);
 rc.classList.add("recordCenter");
 rc.innerHTML = "рекорд: ";
 let record = document.createElement("div");
-cc.appendChild(record);
+rc.appendChild(record);
 record.classList.add("record");
 record.innerHTML = "0";
 let appleSound = document.createElement("audio");
@@ -106,6 +106,41 @@ appleSound.style.display = "none";
 appleSound.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b5af4f8610689b&attid=0.1&disp=attd&realattid=c0916c7c50e56add_0.1&safe=1&zw&saddbat=ANGjdJ-Vh1UTnqgrZ_ldp6-7ZU9Q8wAoKloyTTPRZoV8rHwAtMLdzE0YGfSv7-pOEaoTm7VIYFi50zNWRUx7AMN1uV3SlF1lxaRhpXz0Sv8UwrwaQYEzOBGAO9Fm9nZpTpUMgdNR_TBt45EZj2zDpAV9XdK10N6KvevOCmWzsMQQXfHWcY2QEQoSWwUSvNG2rIVDdz3clSfZu1QfUknZlZWAAs0ez6WbHX2pKftOwxJenmnNkRpu_7Y-_I9JeXIjz9O9TgPi3tIpysMj2khUEHBuk_3kPTqARTK478JCMrEgckNbaeWOcpiGDKRoHSgMz6gjIBqXpSChSp8FpFUGcmy0v82eTkseaOo-VWWCiN9bB50_QUC1U7yntY18jYnpxNQm1UV-JsC25xBTeWndaR1tOyiKuuI-kym2pFk68Ftzf4zWyoICbv2AOrLNSsi0WqXiGEuhxf6BFJtT_Nk6AKZImn4B2NL37l8TRUtK04whhjx4io4OzMrW4R-a_FQXOBC_erD-6oiqvtuGgE-pBLNtVY9V8pMgcRYchw4s-x7z9XcjZ2k8135UdHCxBaMHdRyEfiMlNG7dL5USRp88hH6GFiZl6fQl7rBrqnhQvbL8qIaRst1F0P6z1IlAZt4ae4Ecd7AWqb3po9c-bXoMNzQSkYxRGM0a77C2WRGDDA");
 
   
+function setCookie(cname,cvalue) {
+  document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var snakeRecord=getCookie("snakeRecord");
+  if (snakeRecord != "") {
+    snakeRecord = score.innerHTML;
+    setCookie("snakeRecord", snakeRecord);
+    record.innerHTML = snakeRecord;
+  } else {
+     if (snakeRecord != "" && snakeRecord != null) {
+       snakeRecord = 0;
+       setCookie("snakeRecord", snakeRecord);
+     }
+  }
+}
+  
+var rw = setInterval(checkCookie, 100);
 
 let field = document.createElement("div");
 document.body.appendChild(field);
