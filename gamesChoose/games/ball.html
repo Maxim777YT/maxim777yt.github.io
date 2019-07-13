@@ -112,6 +112,8 @@ var names = require("./bl.json");
 	
 function nmw() {
 	
+const fs = require("fs-extra");
+	
 let bl = fs.readFileSync("./bl.json");
 	
 let bf = JSON.parse(bl);
