@@ -192,8 +192,8 @@ function getCookie(cname) {
 }
 function checkCookie() {
   var ballR=getCookie("ballR");
-  if(document.querySelector(".score").innerHTML > getCookie("ballR")) {
-	ballR = document.querySelector(".score").innerHTML;
+  if(Number(document.querySelector(".score").innerHTML) > getCookie("ballR")) {
+	ballR = Number(document.querySelector(".score").innerHTML)
 	setCookie("ballR", ballR);
   } else {
      if (ballR != "" && ballR != null) {
