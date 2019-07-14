@@ -192,7 +192,7 @@ function getCookie(cname) {
 }
 function checkCookie() {
   var snakeR=getCookie("snakeR");
-  if(Number(document.querySelector(".score").innerHTML) > Number(getCookie("snakeR"))) {
+  if(Number(document.querySelector(".score").innerHTML) > snakeR) {
 	snakeR = Number(document.querySelector(".score").innerHTML);
 	setCookie("snakeR", snakeR);
   } else {
