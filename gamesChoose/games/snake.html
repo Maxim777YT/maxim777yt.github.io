@@ -188,21 +188,17 @@ function getCookie(cname) {
 }
 function checkCookie() {
   var snakeR=getCookie("snakeR");
-  if (snakeR != "") {
-	if(document.querySelector(".score").innerHTML > getCookie("snakeR")) {
-	snakeR = document.querySelector(".score").innerHTML;
+  if(Number(document.querySelector(".score").innerHTML) > getCookie("snakeR")) {
+	snakeR = Number(document.querySelector(".score").innerHTML);
 	setCookie("snakeR", snakeR);
-	}
-	document.querySelector(".record").innerHTML = `Рекорд: ${snakeR}`;
   } else {
-     snakeR = document.querySelector(".score").innerHTML;
      if (snakeR != "" && snakeR != null) {
-      if(snakeR > getCookie(snakeR)) {
+     } else {
+       snakeR = 0;
        setCookie("snakeR", snakeR);
-       document.querySelector(".record").innerHTML = `Рекорд: ${snakeR}`;
-      }
      }
   }
+document.querySelector(".record").innerHTML = `Рекорд: ${snakeR}`;
 }
 	
 setInterval(checkCookie, 100);
