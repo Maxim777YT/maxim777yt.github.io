@@ -191,18 +191,18 @@ function getCookie(cname) {
   return "";
 }
 function checkCookie() {
-  var ballR=getCookie("ballR");
-  if(Number(document.querySelector(".score").innerHTML) > getCookie("ballR")) {
-	ballR = Number(document.querySelector(".score").innerHTML)
-	setCookie("ballR", ballR);
+  var snakeR=getCookie("snakeR");
+  if(Number(document.querySelector(".score").innerHTML) > getCookie("snakeR")) {
+	snakeR = Number(document.querySelector(".score").innerHTML)
+	setCookie("snakeR", snakeR);
   } else {
-     if (ballR != "" && ballR != null) {
+     if (snakeR != "" && snakeR != null) {
      } else {
-       ballR = 0;
-       setCookie("ballR", ballR);
+       snakeR = 0;
+       setCookie("snakeR", snakeR);
      }
   }
-document.querySelector(".record").innerHTML = `Рекорд: ${ballR}`;
+document.querySelector(".record").innerHTML = `Рекорд: ${snakeR}`;
 }
 	
 setInterval(checkCookie, 100);
