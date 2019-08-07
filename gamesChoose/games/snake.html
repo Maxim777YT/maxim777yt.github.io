@@ -34,9 +34,9 @@ border-radius: 50%;
 background-size: cover;
 }
 .head {
-background: url("images/snakehead.png");
+background: linear-gradient(45deg, #0c0, #0e0);
 background-size: cover;
-filter: brightness(0.92);
+filter: brightness(0.85);
 border-radius: 50%;
 }
 .up {
@@ -158,40 +158,24 @@ rbtn.innerHTML = ">";
 ubtn.onclick = function() {
  if(steps==true && direction != "down") {
   direction = "up";
-  snakeBody[0].classList.remove("left");
-  snakeBody[0].classList.remove("down");
-  snakeBody[0].classList.remove("right");
-  snakeBody[0].classList.add("up");
   steps = false;
  } 
 }
 lbtn.onclick = function() {
  if(steps==true && direction != "right") {
   direction = "left";
-  snakeBody[0].classList.remove("up");
-  snakeBody[0].classList.remove("down");
-  snakeBody[0].classList.remove("right");
-  snakeBody[0].classList.add("left");
   steps = false;
  } 
 }
 dbtn.onclick = function() {
  if(steps==true && direction != "up") {
   direction = "down";
-  snakeBody[0].classList.remove("up");
-  snakeBody[0].classList.remove("left");
-  snakeBody[0].classList.remove("right");
-  snakeBody[0].classList.add("down");
   steps = false;
  } 
 }
 rbtn.onclick = function() {
  if(steps==true && direction != "left") {
   direction = "right";
-  snakeBody[0].classList.remove("up");
-  snakeBody[0].classList.remove("down");
-  snakeBody[0].classList.remove("left");
-  snakeBody[0].classList.add("right");
   steps = false;
  } 
 }
@@ -306,10 +290,6 @@ snakeBody.pop();
 
 
 if(direction == 'right') {
-snakeBody[0].classList.remove("left");
-  snakeBody[0].classList.remove("down");
-  snakeBody[0].classList.remove("up");
-  snakeBody[0].classList.add("right");
 if(snakeCoordinates[0] < 10) {
 snakeBody.unshift(document.querySelector('[posX = "' + (+snakeCoordinates[0]+1) + '"][posY = "' + snakeCoordinates[1] + '"]'));
 }
@@ -321,10 +301,6 @@ restart.style.display = 'inherit';
 }
 }
 else if(direction == 'left') {
-snakeBody[0].classList.remove("up");
-snakeBody[0].classList.remove("down");
-snakeBody[0].classList.remove("right");
-snakeBody[0].classList.add("left");
 if(snakeCoordinates[0] > 1) {
 snakeBody.unshift(document.querySelector('[posX = "' + (+snakeCoordinates[0]-1) + '"][posY = "' + snakeCoordinates[1] + '"]'));
 }
@@ -336,10 +312,6 @@ restart.style.display = 'inherit';
 }
 }
 else if(direction == 'up') {
-snakeBody[0].classList.remove("left");
-snakeBody[0].classList.remove("down");
-snakeBody[0].classList.remove("right");
-snakeBody[0].classList.add("up");
 if(snakeCoordinates[1] < 10) {
 snakeBody.unshift(document.querySelector('[posX = "' + snakeCoordinates[0] + '"][posY = "' + (+snakeCoordinates[1]+1) + '"]'));
 }
@@ -351,10 +323,6 @@ restart.style.display = 'inherit';
 }
 }
 else if(direction == 'down') {
-snakeBody[0].classList.remove("left");
-snakeBody[0].classList.remove("up");
-snakeBody[0].classList.remove("right");
-snakeBody[0].classList.add("down");
 if(snakeCoordinates[1] > 1) {
 snakeBody.unshift(document.querySelector('[posX = "' + +snakeCoordinates[0] + '"][posY = "' + (+snakeCoordinates[1]-1) + '"]'));
 }
@@ -402,34 +370,18 @@ window.addEventListener('keydown', function(e) {
 if(steps == true) {
 if(e.keyCode == 37 && direction != 'right' || e.keyCode == 65 && direction != 'right') {
 direction = 'left';
-snakeBody[0].classList.remove("up");
-snakeBody[0].classList.remove("down");
-snakeBody[0].classList.remove("right");
-snakeBody[0].classList.add("left");
 steps = false;
 }
 else if(e.keyCode == 38 && direction != 'down' || e.keyCode == 87 && direction != 'down') {
 direction = 'up';
-snakeBody[0].classList.remove("left");
-snakeBody[0].classList.remove("down");
-snakeBody[0].classList.remove("right");
-snakeBody[0].classList.add("up");
 steps = false;
 }
 else if(e.keyCode === 39 && direction != 'left' || e.keyCode == 68 && direction != 'left') {
 direction = 'right';
-snakeBody[0].classList.remove("left");
-snakeBody[0].classList.remove("down");
-snakeBody[0].classList.remove("up");
-snakeBody[0].classList.add("right");
 steps = false;
 }
 else if(e.keyCode == 40 && direction != 'up' || e.keyCode == 83 && direction != 'up') {
 direction = 'down';
-snakeBody[0].classList.remove("left");
-snakeBody[0].classList.remove("up");
-snakeBody[0].classList.remove("right");
-snakeBody[0].classList.add("down");
 steps = false;
 }
 }
