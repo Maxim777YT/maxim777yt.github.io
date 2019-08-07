@@ -34,10 +34,22 @@ border-radius: 50%;
 background-size: cover;
 }
 .head {
-background: linear-gradient(45deg, #0a0, #0c0);
+background: url("images/snakehead.png");
 background-size: cover;
-filter: brightness(0.85);
+filter: brightness(0.92);
 border-radius: 50%;
+}
+.up {
+transform: rotate(0deg);
+}
+.down {
+transform: rotate(180deg);
+}
+.right {
+transform: rotate(90deg);
+}
+.left {
+transform: rotate(270deg);
 }
 .apple {
 background: url(https://i.ibb.co/1XSq2s0/72-CE15-B0-0-E8-C-4-DE6-91-BF-E22-D689-D67-D3.png);
@@ -146,24 +158,40 @@ rbtn.innerHTML = ">";
 ubtn.onclick = function() {
  if(steps==true && direction != "down") {
   direction = "up";
+  snakeBody[0].classList.remove("left");
+  snakeBody[0].classList.remove("down");
+  snakeBody[0].classList.remove("right");
+  snakeBody[0].classList.add("up");
   steps = false;
  } 
 }
 lbtn.onclick = function() {
  if(steps==true && direction != "right") {
   direction = "left";
+  snakeBody[0].classList.remove("up");
+  snakeBody[0].classList.remove("down");
+  snakeBody[0].classList.remove("right");
+  snakeBody[0].classList.add("left");
   steps = false;
  } 
 }
 dbtn.onclick = function() {
  if(steps==true && direction != "up") {
   direction = "down";
+  snakeBody[0].classList.remove("up");
+  snakeBody[0].classList.remove("left");
+  snakeBody[0].classList.remove("right");
+  snakeBody[0].classList.add("down");
   steps = false;
  } 
 }
 rbtn.onclick = function() {
  if(steps==true && direction != "left") {
   direction = "right";
+  snakeBody[0].classList.remove("up");
+  snakeBody[0].classList.remove("down");
+  snakeBody[0].classList.remove("left");
+  snakeBody[0].classList.add("right");
   steps = false;
  } 
 }
