@@ -7,25 +7,27 @@
 .field1 {
 width: 473px;
 background: url("https://o.remove.bg/downloads/5d9e3db5-590b-42d1-bceb-472e3d9e19c4/BCEF8-EAC-45-D2-4251-9649-95235-B6-B37-B3-removebg-preview.png");
-width: 500px;
-height: 500px;
+width: 510px;
+height: 510px;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-border-radius: 25px 25px 0 0;
+border-radius: 0;
 background-size: cover;
-padding: 27px;
+padding: 37px;
+z-index: 1;
 }
 .field2 {
 background: url("https://o.remove.bg/downloads/1ebe9b28-37b5-4606-a0bf-d22a3689470d/541706-E7-BBBC-4879-B6-D3-55-BEF02-D1-C1-D-removebg-preview.png");
-width: 500px;
-height: 500px;
+width: 510px;
+height: 510px;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-border-radius: 25px 25px 0 0;
+border-radius: 0;
 background-size: cover;
-padding: 27px;
+padding: 37px;
+z-index: 1;
 }
 .cell {
 width: 151px;
@@ -34,30 +36,10 @@ background: transparent;
 margin: 0;
 padding: 0;
 background-size: cover;
+z-index: 2;
 }
-#cell1, #cell2, #cell3 {
-border-top: none;
-}
-#cell1, #cell4, #cell7 {
-border-left: none;
-}
-#cell6, #cell9, #cell3 {
-border-right: none;
-}
-#cell7, #cell8, #cell9 {
-border-bottom: none;
-}
-#cell1 {
-border-radius: 25px 0 0 0;
-}
-#cell3 {
-border-radius: 0 25px 0 0;
-}
-#cell9 {
-border-radius: 0 0 25px 0;
-}
-#cell7 {
-border-radius: 0 0 0 25px;
+.winanim {
+z-index: 3;
 }
 #btn {
 display: inline-block;
@@ -343,6 +325,7 @@ let checkInt = setInterval(check, 1000/24);
 </head>
 <body>
 <center>
+<div class="winanim">
 <div class="field field2">
 <div class="cell" id="cell1" onclick='mobilePress("#cell1");'></div>
 <div class="cell" id="cell2" onclick='mobilePress("#cell2");'></div>
@@ -353,7 +336,7 @@ let checkInt = setInterval(check, 1000/24);
 <div class="cell" id="cell7" onclick='mobilePress("#cell7");'></div>
 <div class="cell" id="cell8" onclick='mobilePress("#cell8");'></div>
 <div class="cell" id="cell9" onclick='mobilePress("#cell9");'></div>
-</div><br />
+</div></div><br />
 <button id="btn" onclick="start();">Начать</button><br />
 <div class="result"> </div>
 <a style="color:blue;text-decoration:underline;" onclick="if(x==0){document.querySelector('.ht').style.display='inherit';x=1;} else{document.querySelector('.ht').style.display='none';x=0;}">Управление</a>
