@@ -266,24 +266,14 @@ for(let k=0; k<9; k++) {
 for(let j=0; j<9; j++) {
 if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].getAttribute("char") == cells[j].getAttribute("char")) {
 if(cells[i].getAttribute("char") == "x" || cells[i].getAttribute("char") == "0") {
-switch(i + "|" + k + "|" + j) {
-case "0|1|2":
-case "0|3|6":
-case "0|4|8":
-case "2|4|6":
-case "2|5|8":
-case "6|7|8":
-case "1|4|7":
-case "3|4|5":
-cells[i].style.background = `${cells[i].style.background}, rgba(255, 255, 255, .7)`;
-cells[i].style.backgroundSize = "cover, cover";
-cells[k].style.background = `${cells[k].style.background}, rgba(255, 255, 255, .7)`;
-cells[k].style.backgroundSize = "cover, cover";
-cells[j].style.background = `${cells[j].style.background}, rgba(255, 255, 255, .7)`;
-cells[j].style.backgroundSize = "cover, cover";
+if(i==0&&k==1&&j==2||i==0&&k==3&&j==6||i==0&&k==4&&j==8||i==2&&k==4&&j==6||i==2&&k==5&&j==8||i==6&&k==7&&j==8||i==1&&k==4&&j==7||i==3&&k==4&&j==5) {
+if(cells[i].getAttribute("char") == "x") {
+cells[i].style.background = 'url("images/whitex.png")';
+} else {
+cells[i].style.background = 'url("imagez/white0.png")';
+}
 a = false;
 g = false;
-break;
 }
 }
 } else {
@@ -322,7 +312,6 @@ let checkInt = setInterval(check, 1000/24);
 </head>
 <body>
 <center>
-<div class="winanim"></div>
 <div class="field field2">
 <div class="cell" id="cell1" onclick='start("#cell1"); mobilePress("#cell1");'></div>
 <div class="cell" id="cell2" onclick='start("#cell2"); mobilePress("#cell2");'></div>
