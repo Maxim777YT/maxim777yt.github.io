@@ -16,7 +16,6 @@ background-size: cover;
 padding: 70px;
 padding-left: 90px;
 padding-right: 50px;
-margin-top: -453px;
 }
 .field2 {
 background: url("images/5AEF7ED3-3A15-42D1-8B08-7F1A4C15FEEB.png");
@@ -31,7 +30,6 @@ padding: 70px;
 padding-left: 90px;
 padding-right: 50px;
 z-index: 1;
-margin-top: -453px;
 }
 .cell {
 width: 151px;
@@ -39,11 +37,6 @@ height: 151px;
 background: transparent;
 margin: 10px;
 padding: 0;
-background-size: cover;
-}
-.winanim {
-width: 453px;
-height: 453px;
 background-size: cover;
 }
 #btn {
@@ -79,6 +72,7 @@ background: #eee;
 }
 </style>
 <script>
+var animcells = [undefined, document.querySelector(".anim1"), document.querySelector(".anim2"), document.querySelector(".anim3"), document.querySelector(".anim4"), document.querySelector(".anim5"), document.querySelector(".anim6"), document.querySelector(".anim7"), document.querySelector(".anim8"), document.querySelector(".anim9")];
 function start(id) {
 if(g == false) {
 a = true;
@@ -90,6 +84,7 @@ cells[i].style.background = "transparent";
 cells[i].removeAttribute("char");
 }
 }
+animcells.forEach((animcell) => { animcell.style.background = "none"; });
 mobilePress(id);
 }
 var xAudio = document.createElement("audio");
@@ -262,6 +257,15 @@ zAudio.play();
 }
 }
 })
+function diag_bottom_top() {
+animcells[7].style.background = 'url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-yJ7YoPeCKjpNJ15/image_part_007.png")';
+animcells[4].style.background = 'url("https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-tbpnQ3ySEdpFTl/image_part_004.png")';
+animcells[8].style.background = 'url("https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-jKD64G8HAfhU/image_part_008.png")';
+animcells[5].style.background = 'url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-DKhRkP4xUVs58/image_part_005.png")';
+animcells[2].style.background = 'url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-UfKwRnab1X/image_part_002.png")';
+animcells[6].style.background = 'url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-oqGoZb4k9q/image_part_006.png")';
+animcells[3].style.background = 'url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-ItN6Vg0WmtEBCp/image_part_003.png")';
+}
 function check() {
 if(c == 1) {
 document.querySelector(".field").classList.add('field1');
@@ -297,8 +301,7 @@ a = false;
 g = false;
 break;
 case "2|4|6":
-var image = "images/diag_bottom_top.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
+diag_bottom_top();
 a = false;
 g = false;
 break;
@@ -366,15 +369,15 @@ let checkInt = setInterval(check, 1000/24);
 <center>
 <div class="winanim"></div>
 <div class="field field2">
-<div class="cell" id="cell1" onclick='start("#cell1"); mobilePress("#cell1");'></div>
-<div class="cell" id="cell2" onclick='start("#cell2"); mobilePress("#cell2");'></div>
-<div class="cell" id="cell3" onclick='start("#cell3"); mobilePress("#cell3");'></div>
-<div class="cell" id="cell4" onclick='start("#cell4"); mobilePress("#cell4");'></div>
-<div class="cell" id="cell5" onclick='start("#cell5"); mobilePress("#cell5");'></div>
-<div class="cell" id="cell6" onclick='start("#cell6"); mobilePress("#cell6");'></div>
-<div class="cell" id="cell7" onclick='start("#cell7"); mobilePress("#cell7");'></div>
-<div class="cell" id="cell8" onclick='start("#cell8"); mobilePress("#cell8");'></div>
-<div class="cell" id="cell9" onclick='start("#cell9"); mobilePress("#cell9");'></div>
+<div class="cell" id="cell1" onclick='start("#cell1"); mobilePress("#cell1");'><div class="anim1"></div></div>
+<div class="cell" id="cell2" onclick='start("#cell2"); mobilePress("#cell2");'><div class="anim2"></div></div>
+<div class="cell" id="cell3" onclick='start("#cell3"); mobilePress("#cell3");'><div class="anim3"></div></div>
+<div class="cell" id="cell4" onclick='start("#cell4"); mobilePress("#cell4");'><div class="anim4"></div></div>
+<div class="cell" id="cell5" onclick='start("#cell5"); mobilePress("#cell5");'><div class="anim5"></div></div>
+<div class="cell" id="cell6" onclick='start("#cell6"); mobilePress("#cell6");'><div class="anim6"></div></div>
+<div class="cell" id="cell7" onclick='start("#cell7"); mobilePress("#cell7");'><div class="anim7"></div></div>
+<div class="cell" id="cell8" onclick='start("#cell8"); mobilePress("#cell8");'><div class="anim8"></div></div>
+<div class="cell" id="cell9" onclick='start("#cell9"); mobilePress("#cell9");'><div class="anim9"></div></div>
 </div><br />
 <script>
 var c = 0;
