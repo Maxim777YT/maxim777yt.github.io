@@ -275,6 +275,7 @@ for(let i=0; i<9; i++) {
 for(let k=0; k<9; k++) {
 for(let j=0; j<9; j++) {
 if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].getAttribute("char") == cells[j].getAttribute("char")) {
+if(cells[i].getAttribute("char") == "x" || cells[i].getAttribute("char") == "0") {
 switch(i + "|" + k + "|" + j) {
 case "0|1|2":
 var image = "images/hor_top.png";
@@ -324,6 +325,7 @@ document.querySelector(".winanim").style.background = image;
 a = false;
 g = false;
 break;
+}
 }
 } else {
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
