@@ -78,7 +78,7 @@ background: #eee;
 }
 </style>
 <script>
-function start() {
+function start(id) {
 if(g == false) {
 a = true;
 g = true;
@@ -91,6 +91,7 @@ cells[i].style.background = "transparent";
 cells[i].removeAttribute("char");
 }
 }
+mobilePress(id);
 }
 var xAudio = document.createElement("audio");
 xAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b61298e418eb8d&attid=0.1&disp=attd&realattid=76ad29b43609df26_0.1&safe=1&zw&saddbat=ANGjdJ_7sfk-tMRAvVxYLv6QTPCoaPfbEocSfpoEu-JLggjD0KEMirwgK5FZMqSO1DT0Em3rS7ZAZC6ZKu7a_ZxGmqSGFE2BZDBUz4wyodOS7ug-PxKS-_ocYQOHf40eP4KCBJ_-XJeuIkLLD5_SdZfkgJ-jHlEibjAn4kOlSbhCRoiI4livoin6q0zNeRtzAs9mfqSVNi-uc4TZiTwDFY5q5O9VBwNtyw-KeqUwvfZ7rpSbCN071y-AjauPMx0E2R8AfYnpp1IbkJphwobN_-fiHl_duHTgOs1QqTankEyjWfDfGmW4vaiKCgX1gIIwPaIk89fSs15-B1b-WGth-kRkpGwMBMWpUAeF_zK5G71W4dvTAqdKDwAK7-zYni_3UxfnHcTXqy4iw6W1nMaLVWJ00OV8mWINwgxn07l56jBSJydumPZbRZGXW-6MvCJkOb1dDuaJ0v0u5T6kE5z_dCSbhm-wtDu2ClGrdvYjzxYJr4e8ZCLmH-gbvZRROF2heEeRJjHi1N9zEKYmkyJB6kzogJ3srupJwVnozr152D0Zyqxnee_0DmnGdR8Z-TQTePdFV9mUm-6PRYd6frHiTyGANfhLeMEvzFU28-cs9vrI5xm5nm1AfGrEk1ZEf6joIvXgYjmmjOE9Np3HdlrOG3sNzH4NTw3xpmeYOXc3lQ");
@@ -331,15 +332,15 @@ let checkInt = setInterval(check, 1000/24);
 <center>
 <div class="winanim">
 <div class="field field2">
-<div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
-<div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
-<div class="cell" id="cell3" onclick='start(); mobilePress("#cell3");'></div>
-<div class="cell" id="cell4" onclick='start(); mobilePress("#cell4");'></div>
-<div class="cell" id="cell5" onclick='start(); mobilePress("#cell5");'></div>
-<div class="cell" id="cell6" onclick='start(); mobilePress("#cell6");'></div>
-<div class="cell" id="cell7" onclick='start(); mobilePress("#cell7");'></div>
-<div class="cell" id="cell8" onclick='start(); mobilePress("#cell8");'></div>
-<div class="cell" id="cell9" onclick='start(); mobilePress("#cell9");'></div>
+<div class="cell" id="cell1" onclick='start("#cell1"); mobilePress("#cell1");'></div>
+<div class="cell" id="cell2" onclick='start("#cell2"); mobilePress("#cell2");'></div>
+<div class="cell" id="cell3" onclick='start("#cell3"); mobilePress("#cell3");'></div>
+<div class="cell" id="cell4" onclick='start("#cell4"); mobilePress("#cell4");'></div>
+<div class="cell" id="cell5" onclick='start("#cell5"); mobilePress("#cell5");'></div>
+<div class="cell" id="cell6" onclick='start("#cell6"); mobilePress("#cell6");'></div>
+<div class="cell" id="cell7" onclick='start("#cell7"); mobilePress("#cell7");'></div>
+<div class="cell" id="cell8" onclick='start("#cell8"); mobilePress("#cell8");'></div>
+<div class="cell" id="cell9" onclick='start("#cell9"); mobilePress("#cell9");'></div>
 </div></div><br />
 <script>
 var c = 0;
