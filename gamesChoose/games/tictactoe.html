@@ -279,7 +279,7 @@ if(cells[i].getAttribute("char") == "x" || cells[i].getAttribute("char") == "0")
 switch(i + "|" + k + "|" + j) {
 case "0|1|2":
 var image = "images/hor_top.png";
-document.querySelector(".winanim").style.background = image;
+document.querySelector(".winanim").style.background = `url("${image}")`;
 a = false;
 g = false;
 break;
