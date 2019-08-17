@@ -84,7 +84,7 @@ cells[i].style.background = "transparent";
 cells[i].removeAttribute("char");
 }
 }
-animcells.forEach((animcell) => { animcell.style.background = "none"; });
+animcells.forEach((animcell) => { if(animcell !== undefined) animcell.style.background = "none"; });
 mobilePress(id);
 }
 var xAudio = document.createElement("audio");
