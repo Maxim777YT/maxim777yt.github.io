@@ -278,32 +278,53 @@ if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].ge
 switch(`${i} | $[k} | ${j}`) {
 case "0 | 1 | 2":
 var image = "images/hor_top.png";
-break;
-case "0 | 3 | 6":
-var image = "images/ver_left.png";
-break;
-case "0 | 4 | 8":
-var image = "images/diag_top_bottom.png";
-break;
-case "2 | 4 | 6":
-var image = "images/diag_bottom_top.png";
-break;
-case "2 | 5 | 8":
-var image = "images/ver_right.png";
-break;
-case "6 | 7 | 8":
-var image = "images/hor_bottom.png";
-break;
-case "1 | 4 | 7":
-var image = "images/ver_center.png";
-break;
-case "3 | 4 | 5":
-var image = "images/hor_center.png";
-break;
-}
 document.querySelector(".winanim").style.background = image;
 a = false;
 g = false;
+break;
+case "0 | 3 | 6":
+var image = "images/ver_left.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+case "0 | 4 | 8":
+var image = "images/diag_top_bottom.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+case "2 | 4 | 6":
+var image = "images/diag_bottom_top.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+case "2 | 5 | 8":
+var image = "images/ver_right.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+case "6 | 7 | 8":
+var image = "images/hor_bottom.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+case "1 | 4 | 7":
+var image = "images/ver_center.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+case "3 | 4 | 5":
+var image = "images/hor_center.png";
+document.querySelector(".winanim").style.background = image;
+a = false;
+g = false;
+break;
+}
 } else {
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 if(cells[0].getAttribute("char") && cells[1].getAttribute("char") && cells[2].getAttribute("char") && cells[3].getAttribute("char") && cells[4].getAttribute("char") && cells[5].getAttribute("char") && cells[6].getAttribute("char") && cells[7].getAttribute("char") && cells[8].getAttribute("char")) {
