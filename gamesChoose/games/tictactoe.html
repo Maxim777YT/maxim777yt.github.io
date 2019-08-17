@@ -4,7 +4,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="images/ttt.ico">
 <title>Tic Tac toe by Maxim777</title>
 <style>
-.field1 {");
+.field1 {
 width: 473px;
 background: url("https://o.remove.bg/downloads/5d9e3db5-590b-42d1-bceb-472e3d9e19c4/BCEF8-EAC-45-D2-4251-9649-95235-B6-B37-B3-removebg-preview.png");
 width: 473px;
@@ -13,6 +13,7 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 border-radius: 25px;
+background-size: cover;
 }
 .field2 {
 background: url("https://o.remove.bg/downloads/1ebe9b28-37b5-4606-a0bf-d22a3689470d/541706-E7-BBBC-4879-B6-D3-55-BEF02-D1-C1-D-removebg-preview.png");
@@ -22,6 +23,7 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 border-radius: 25px;
+background-size: cover;
 }
 .cell {
 width: 151px;
@@ -274,8 +276,8 @@ zAudio.play();
 }
 })
 function check() {
-if(c == 1) document.querySelector(".field2").classList.add('field1').remove('field2');
-if(c == 0) document.querySelector(".field1").classList.add('field2').remove('field1');
+if(c == 1) document.querySelector(".field").classList.add('field1').remove('field2');
+if(c == 0) document.querySelector(".field").classList.add('field2').remove('field1');
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
 for(let k=0; k<9; k++) {
