@@ -278,8 +278,14 @@ zAudio.play();
 }
 })
 function check() {
-if(c == 1) document.querySelector(".field").classList.add('field1').remove('field2');
-if(c == 0) document.querySelector(".field").classList.add('field2').remove('field1');
+if(c == 1) {
+document.querySelector(".field").classList.add('field1');
+document.querySelector(".field").classList.remove('field2');
+}
+if(c == 0) {
+document.querySelector(".field").classList.add('field2');
+document.querySelector(".field").classList.remove('field1');
+}
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
 for(let k=0; k<9; k++) {
