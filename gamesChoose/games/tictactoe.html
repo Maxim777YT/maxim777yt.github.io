@@ -82,9 +82,7 @@ function start(id) {
 if(g == false) {
 a = true;
 g = true;
-var btn = document.querySelector("#btn");
-btn.style.display = "none";
-document.querySelector(".result").innerHTML = " ";
+document.querySelector(".winanim").style.background = "none";
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
 cells[i].style.background = "transparent";
@@ -277,26 +275,38 @@ for(let i=0; i<9; i++) {
 for(let k=0; k<9; k++) {
 for(let j=0; j<9; j++) {
 if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].getAttribute("char") == cells[j].getAttribute("char")) {
-if(i==0&&k==1&&j==2||i==0&&k==3&&j==6||i==0&&k==4&&j==8||i==2&&k==4&&j==6||i==2&&k==5&&j==8||i==6&&k==7&&j==8||i==1&&k==4&&j==7||i==3&&k==4&&j==5) {
-if(cells[i].getAttribute("char") === "x") {
-document.querySelector(".result").innerHTML = "крестики выиграли!";
+switch(`${i} | $[k} | ${j}`) {
+case "0 | 1 | 2":
+var image = "images/hor_top.png";
+break;
+case "0 | 3 | 6":
+var image = "images/ver_left.png";
+break;
+case "0 | 4 | 8":
+var image = "images/diag_top_bottom.png";
+break;
+case "2 | 4 | 6":
+var image = "images/diag_bottom_top.png";
+break;
+case "2 | 5 | 8":
+var image = "images/ver_right.png";
+break;
+case "6 | 7 | 8":
+var image = "images/hor_bottom.png";
+break;
+case "1 | 4 | 7":
+var image = "images/ver_center.png";
+break;
+case "3 | 4 | 5":
+var image = "images/hor_center.png";
+break;
+}
+document.querySelector(".winanim").style.background = image;
 a = false;
 g = false;
-return true;
-}
-else if(cells[i].getAttribute("char") === "0") {
-document.querySelector(".result").innerHTML = "нолики выиграли!";
-a = false;
-g = false;
-return true;
-}
-else {}
-}
-document.querySelector("#btn").style.display = "inherit";
 } else {
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 if(cells[0].getAttribute("char") && cells[1].getAttribute("char") && cells[2].getAttribute("char") && cells[3].getAttribute("char") && cells[4].getAttribute("char") && cells[5].getAttribute("char") && cells[6].getAttribute("char") && cells[7].getAttribute("char") && cells[8].getAttribute("char")) {
-document.querySelector(".result").innerHTML = "ничья!";
 a = false;
 g = false;
 }
