@@ -250,20 +250,7 @@ document.querySelector("#cell9").style.background = "url(https://i.ibb.co/zrjBng
 document.querySelector("#cell9").setAttribute("char", "0");
 document.querySelector("#cell9").style.backgroundSize = "cover";
 zAudio.play();
-}
-}
-}
 })
-function diag_bottom_top() {
-let cells = [undefined, document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
-cells[7].style.background = `${cells[7].style.background}, url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-yJ7YoPeCKjpNJ15/image_part_007.png")`;
-cells[4].style.background = `${cells[4].style.background}, url("https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-tbpnQ3ySEdpFTl/image_part_004.png")`;
-cells[8].style.background = `${cells[8].style.background}, url("https://srv4.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-jKD64G8HAfhU/image_part_008.png")`;
-cells[5].style.background = `${cells[5].style.background}, url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-DKhRkP4xUVs58/image_part_005.png")`;
-cells[2].style.background = `${cells[2].style.background}, url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-UfKwRnab1X/image_part_002.png")`;
-cells[6].style.background = `${cells[6].style.background}, url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-oqGoZb4k9q/image_part_006.png")`;
-cells[3].style.background = `${cells[3].style.background}, url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-ItN6Vg0WmtEBCp/image_part_003.png")`;
-}
 function check() {
 if(c == 1) {
 document.querySelector(".field").classList.add('field1');
@@ -281,49 +268,19 @@ if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].ge
 if(cells[i].getAttribute("char") == "x" || cells[i].getAttribute("char") == "0") {
 switch(i + "|" + k + "|" + j) {
 case "0|1|2":
-var image = "images/hor_top.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
-a = false;
-g = false;
-break;
 case "0|3|6":
-var image = "images/ver_left.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
-a = false;
-g = false;
-break;
 case "0|4|8":
-var image = "images/diag_top_bottom.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
-a = false;
-g = false;
-break;
 case "2|4|6":
-diag_bottom_top();
-a = false;
-g = false;
-break;
 case "2|5|8":
-var image = "images/ver_right.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
-a = false;
-g = false;
-break;
 case "6|7|8":
-var image = "images/hor_bottom.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
-a = false;
-g = false;
-break;
 case "1|4|7":
-var image = "images/ver_center.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
-a = false;
-g = false;
-break;
 case "3|4|5":
-var image = "images/hor_center.png";
-document.querySelector(".winanim").style.background = `url("${image}")`;
+cells[i].style.background = `${cells[i].style.background}, rgba(255, 255, 255, .7)`;
+cells[i].style.backgroundSize = "cover, cover";
+cells[k].style.background = `${cells[k].style.background}, rgba(255, 255, 255, .7)`;
+cells[k].style.backgroundSize = "cover, cover";
+cells[j].style.background = `${cells[j].style.background}, rgba(255, 255, 255, .7)`;
+cells[j].style.backgroundSize = "cover, cover";
 a = false;
 g = false;
 break;
