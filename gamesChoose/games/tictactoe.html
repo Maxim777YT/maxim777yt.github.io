@@ -76,11 +76,11 @@ function start(id) {
 if(g == false) {
 a = true;
 g = true;
-document.querySelector(".winanim").style.background = "none";
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
 cells[i].style.background = "transparent";
-cells[i].removeAttribute("char
+cells[i].removeAttribute("char");
+}
 mobilePress(id);
 }
 var xAudio = document.createElement("audio");
