@@ -101,13 +101,23 @@ function back() {
 var exp = document.form.textview.value;
 document.form.textview.value = exp.substring(0, exp.length - 1);
 }
+function check() {
+let inp = document.form.textview.value.split('');
+for(let i = 0; i < inp.length; i++) {
+if(inp[i] != "1" && inp[i] != "2" && inp[i] != 3" && inp[i] != "4" && inp[i] != "5" && inp[i] != "6" && inp[i] != "7" && inp[i] != "8" && inp[i] != "9" && inp[i] != "+" && inp[i] != "-" && inp[i] != "*" && inp[i] != "/" && inp[i] != "0" && inp[i] != ".") {
+inp.splice(i, 1);
+}
+}
+document.form.textview.value = inp.join('');
+}
+setInterval(check, 10);
 </script>
 </head>
 <body>
 <div class="calculator">
  <div class="header">
   <form name="form">
-   <input class="textview" name="textview" placeholder="Result">
+   <input class="textview" name="textview" placeholder="Result" onsubmit="equal();">
   </form>
  </div>
  <div class="table">
