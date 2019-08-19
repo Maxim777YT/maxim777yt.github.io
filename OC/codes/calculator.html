@@ -122,8 +122,9 @@ setInterval(check, 10);
 <body>
 <div class="calculator">
  <div class="header">
-  <form name="form">
-   <input class="textview" name="textview" placeholder="Result" onsubmit="equal();">
+  <form name="form" onsubmit="equal();">
+   <input class="textview" name="textview" placeholder="Result">
+   <input type="submit" style="display: none;">
   </form>
  </div>
  <div class="table">
