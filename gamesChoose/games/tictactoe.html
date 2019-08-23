@@ -131,7 +131,7 @@ document.querySelector(".pchoose.pl2.sp").innerHTML = AI;
 }
 function changeNames(p) {
 p1 = document.querySelector(`.pchoose.pl1.${p}`).value;
-p2 = p=="mp"?document.querySelector(".pchoose.pl2.mp").value:document.querySelector(".pchoose.pl2.sp").innerHTML;
+p2 = p=="mp"?document.querySelector(".pchoose.pl2.mp").value:AI;
 if(p1=="" || p1==" ") p1 = "Player 1";
 if(p2=="" || p2==" ") p2 = "Player 2";
 document.querySelector(".score.x").innerHTML = `${p1}: 0`;
