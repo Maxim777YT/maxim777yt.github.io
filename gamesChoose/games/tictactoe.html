@@ -83,6 +83,7 @@ height: 50px;
 font-family: Arial;
 font-size: 20px;
 border: 1px solid black;
+background: white;
 }
 .scoreimg {
 width: 20px;
@@ -170,10 +171,14 @@ function check() {
 if(c == 1) {
 document.querySelector(".field").classList.add('field1');
 document.querySelector(".field").classList.remove('field2');
+document.querySelector(".score.x").style.background = "white";
+document.querySelector(".score.z").style.background = "rgba(255, 0, 0, .85)";
 }
 if(c == 0) {
 document.querySelector(".field").classList.add('field2');
 document.querySelector(".field").classList.remove('field1');
+document.querySelector(".score.z").style.background = "white";
+document.querySelector(".score.x").style.background = "rgba(255, 0, 0, .85)";
 }
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
