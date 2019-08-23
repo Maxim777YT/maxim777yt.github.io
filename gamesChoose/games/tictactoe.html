@@ -164,7 +164,7 @@ cells[j].style.background = 'url("images/X_white.jpeg")';
 cells[i].style.backgroundSize = 'contain';
 cells[k].style.backgroundSize = 'contain';
 cells[j].style.backgroundSize = 'contain';
-document.querySelector(".score.x").innerHTML = `${p1}: ${Number(document.querySelector(".score.x").innerHTML.substring(p1.length+2, document.querySelector(".score.x").innerHTML.length))+1}`;
+if(a==true) document.querySelector(".score.x").innerHTML = `${p1}: ${Number(document.querySelector(".score.x").innerHTML.substring(p1.length+2, document.querySelector(".score.x").innerHTML.length))+1}`;
 a = false;
 g = false;
 } else {
@@ -174,7 +174,7 @@ cells[j].style.background = 'url("images/0_white.jpeg")';
 cells[i].style.backgroundSize = 'contain';
 cells[k].style.backgroundSize = 'contain';
 cells[j].style.backgroundSize = 'contain';
-document.querySelector(".score.z").innerHTML = `${p2}: ${Number(document.querySelector(".score.z").innerHTML.substring(p2.length+2, document.querySelector(".score.z").innerHTML.length))+1}`;
+if(a==true) document.querySelector(".score.z").innerHTML = `${p2}: ${Number(document.querySelector(".score.z").innerHTML.substring(p2.length+2, document.querySelector(".score.z").innerHTML.length))+1}`;
 a = false;
 g = false;
 }
