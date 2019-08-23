@@ -156,6 +156,8 @@ AI = `AI(${lvl})`;
 document.querySelector(".pchoose.pl2.sp").innerHTML = AI;
 }
 function changeNames(p) {
+if(p=="mp") document.querySelector(".restart").style.display="none";
+if(p=="sp") document.querySelector(".restart").style.display="block";
 p1 = document.querySelector(`.pchoose.pl1.${p}`).value;
 p2 = document.querySelector(".pchoose.pl2.mp").value;
 if(p1=="" || p1==" ") p1 = "Player 1";
@@ -261,7 +263,7 @@ let checkInt = setInterval(check, 1000/24);
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
 </center>
 <center class="center" style="display: none;">
-<img src="images/restart.png" class="restart" onclick="start();">
+<img src="images/restart.png" class="restart" style="display: none;" onclick="start();">
 <div class="field field2">
 <div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
 <div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
