@@ -212,13 +212,13 @@ let checkInt = setInterval(check, 1000/24);
   <a class="choosebtn" onclick="swp('.spchoose', '.choose');">1 player</a>
   <a class="choosebtn" onclick="swp('.mpchoose', '.choose');">2 players</a>
 </center>
-<center class="spchoose">
+<center class="spchoose" style="display: none;">
   <input class="pchoose pl1 sp" placeholder="Player 1" /><br />
   <div class="pchoose pl2 sp">AI(Easy)</div>
   <button class="diffchoose easy" onclick="chooseAI('Easy');">Easy</button><button class="diffchoose medium" onclick="chooseAI('Medium');">Medium</button><button class="diffchoose hard" onclick="chooseAI('Hard');">Hard</button>
   <button class="start sp" onclick="swp('.center', '.spchoose');">Start</button>
 </center>
-<center class="mpchoose">
+<center class="mpchoose" style="display: none;">
   <input class="pchoose pl1 mp" placeholder="Player 1" /><br />
   <input class="pchoose pl2 mp" placeholder="Player 2" /><br />
   <button class="start mp" onclick="swp('.center', '.mpchoose');">Start</button>
