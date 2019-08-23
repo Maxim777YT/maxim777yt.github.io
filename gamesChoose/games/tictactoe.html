@@ -74,7 +74,7 @@ background-size: cover;
 }
 </style>
 <script>
-function start(id) {
+function start() {
 if(g == false) {
 if(lastC == 0) {
 c = 1;
@@ -233,15 +233,15 @@ let checkInt = setInterval(check, 1000/24);
 <center class="center" style="display: none;">
 <div class="score x">Player 1: 0</div>
 <div class="field field2">
-<div class="cell" id="cell1" onclick='start("#cell1"); mobilePress("#cell1");'></div>
-<div class="cell" id="cell2" onclick='start("#cell2"); mobilePress("#cell2");'></div>
-<div class="cell" id="cell3" onclick='start("#cell3"); mobilePress("#cell3");'></div>
-<div class="cell" id="cell4" onclick='start("#cell4"); mobilePress("#cell4");'></div>
-<div class="cell" id="cell5" onclick='start("#cell5"); mobilePress("#cell5");'></div>
-<div class="cell" id="cell6" onclick='start("#cell6"); mobilePress("#cell6");'></div>
-<div class="cell" id="cell7" onclick='start("#cell7"); mobilePress("#cell7");'></div>
-<div class="cell" id="cell8" onclick='start("#cell8"); mobilePress("#cell8");'></div>
-<div class="cell" id="cell9" onclick='start("#cell9"); mobilePress("#cell9");'></div>
+<div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
+<div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
+<div class="cell" id="cell3" onclick='start(); mobilePress("#cell3");'></div>
+<div class="cell" id="cell4" onclick='start(); mobilePress("#cell4");'></div>
+<div class="cell" id="cell5" onclick='start(); mobilePress("#cell5");'></div>
+<div class="cell" id="cell6" onclick='start(); mobilePress("#cell6");'></div>
+<div class="cell" id="cell7" onclick='start(); mobilePress("#cell7");'></div>
+<div class="cell" id="cell8" onclick='start(); mobilePress("#cell8");'></div>
+<div class="cell" id="cell9" onclick='start(); mobilePress("#cell9");'></div>
 </div>
 <div class="score z">Player 2: 0</div>
 </center>
