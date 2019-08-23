@@ -73,10 +73,11 @@ background-image: url("images/plank_bg.jpg");
 background-size: cover;
 }
 .restart {
-src: url('images/restart.png');
 position: fixed;
 top: 0;
 right: 0;
+width: 50px;
+height: 50px;
 }
 </style>
 <script>
@@ -246,7 +247,7 @@ let checkInt = setInterval(check, 1000/24);
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
 </center>
 <center class="center" style="display: none;">
-<img class="restart" onclick="start();">
+<img src="images/restart.png" class="restart" onclick="start();">
 <div class="field field2">
 <div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
 <div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
