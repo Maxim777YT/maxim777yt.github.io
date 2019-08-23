@@ -98,31 +98,40 @@ var zAudio = document.createElement("audio");
 zAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b612d74239b309&attid=0.1&disp=attd&realattid=4267c990b8a28061_0.1&safe=1&zw&saddbat=ANGjdJ_99wFpvGq2Y2G7oWVZu5A2ofTXNsVVEvLGCgOgCh801OORi8lya4-53Hm0hUvVxza2JoEhKK4tOFzofzOI9iKbLsLWUd1Piy-Uspl0nMX6EMp1-X6BcrmQkKmyCwTAOX7buYzkkqiVXvlolohSIdLYo5ILXmYprOX_uK1eQCNhKtv7Mh4sRKoak2jRsksrt3vRAMKcR8UUAQUp134Nmh55kIP34NVVXLvMN-1WgogkDrFxMP55bnhXNbTkb7VcgiL2Je2gBPl5X4nQ8XeW96Dn2pC7qD-jD7l5U9k9jlUqH-sACw_DLcUIP0NIFh735-lAFbfK6C2_GxNny1RR9LfR61l4yHgV4Qu73-4uh3iwNSZn8sKWW_SFOKMbI3uSjVeo8qiz30ktk_N98w7p2tZ7h1Ru_dp4dveHqGtGryRV-CqLRIQyEEsLph764usDVne-wYVCUTyFQGUS5mkAf8NKC4-51lVFJ3_JidIhxT6iJTsUtget1vMFGKfOy4Lj_WhMMSC4CIe21tG8VzlsvHfun3z64KpA0SD2Umh6dWSf27DP5opB-pO_5Ce0dnNIyTwTqTMEiMm5r9JvryU-MfTCKhilOSzgd3GuXiLgs6cNT10oCZacCh64EylP04HJczh_vCodRKXCDeIs5d1iRtP4lyl_yzmoB7a24Q");
 window.addEventListener('keydown', function(e) {
 if(e.keyCode == 103) {
-start("#cell1");
+start();
+mobilePress("#cell1");
 }
 if(e.keyCode == 104) {
-start("#cell2");
+start();
+mobilePress("#cell2");
 }
 if(e.keyCode == 105) {
-start("#cell3");
+start();
+mobilePress("#cell3");
 }
 if(e.keyCode == 100) {
-start("#cell4");
+start();
+mobilePress("#cell4");
 }
 if(e.keyCode == 101) {
-start("#cell5");
+start();
+mobilePress("#cell5");
 }
 if(e.keyCode == 102) {
-start("#cell6");
+start();
+mobilePress("#cell6");
 }
 if(e.keyCode == 97) {
-start("#cell7");
+start();
+mobilePress("#cell7");
 }
 if(e.keyCode == 98) {
-start("#cell8");
+start();
+mobilePress("#cell8");
 }
 if(e.keyCode == 99) {
-start("#cell9");
+start();
+mobilePress("#cell9");
 }
 })
 function chooseAI(lvl) {
@@ -197,13 +206,13 @@ if(document.querySelector(id).getAttribute("char") != "x" && document.querySelec
 if(c == 0) {
 c = 1;
 document.querySelector(id).setAttribute("char", "x");
-document.querySelector(id).style.background =  "url(https://i.ibb.co/S7jbxm7/E67-CE458-50-B6-4-A0-F-87-DD-B53745-FAF3-AB.png)";
+document.querySelector(id).style.background =  "url('images/ttt_x')";
 document.querySelector(id).style.backgroundSize = "cover";
 xAudio.play();
 }
 else {
 c = 0;
-document.querySelector(id).style.background = "url(https://i.ibb.co/zrjBngQ/C1-F46-D29-486-E-4-EDF-A1-C2-385-BCFE42-ED3.png)";
+document.querySelector(id).style.background = "url('images/ttt_z')";
 document.querySelector(id).setAttribute("char", "0");
 document.querySelector(id).style.backgroundSize = "cover";
 zAudio.play();
