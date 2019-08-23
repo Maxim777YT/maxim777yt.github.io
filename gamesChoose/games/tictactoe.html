@@ -76,6 +76,13 @@ background-size: cover;
 <script>
 function start(id) {
 if(g == false) {
+if(lastC == 0) {
+c = 1;
+lastC = 1;
+} else {
+c = 0;
+lastC = 0;
+}
 a = true;
 g = true;
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
@@ -210,6 +217,7 @@ var c = 0;
 var a = false;
 var x = 0;
 var g = false;
+var lastC = 0;
 </script>
 </body>
 </html>
