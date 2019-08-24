@@ -231,7 +231,11 @@ document.querySelector(n).style.display='block';
 var thisPage = n;
 }
 function swap() {
-swp(".choose", thisPage);
+document.querySelector(".spchoose").style.display = "none";
+document.querySelector(".mpchoose").style.display = "none";
+document.querySelector(".center").style.display = "none";
+document.querySelector(".choose").style.display = "block";
+var thisPage = ".choose";
 }
 function check() {
 if(c == 1) {
