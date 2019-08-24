@@ -71,8 +71,6 @@ margin-bottom: 50px;
 body {
 background-image: url("images/plank_bg.jpg");
 background-size: cover;
-display: flex;
-justify-content: center;
 }
 .restart {
 position: fixed;
@@ -102,9 +100,6 @@ color: #fefefe;
 background: url("images/5AEF7ED3-3A15-42D1-8B08-7F1A4C15FEEB.png");
 width: 573px;
 height: 573px;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
 border-radius: 0;
 background-size: cover;
 z-index: 1;
@@ -274,11 +269,13 @@ let checkInt = setInterval(check, 1000/24);
 </script>
 </head>
 <body>
-<center class="choose">
+<center>
+<div class="choose">
   <div style="margin-top: 210px; margin-left: 190px;">
   <a class="choosebtn" onclick="swp('.spchoose', '.choose');">1 player</a><br />
   <a class="choosebtn" onclick="swp('.mpchoose', '.choose');">2 players</a>
   </div>
+</div>
 </center>
 <center class="spchoose" style="display: none;">
   <input class="pchoose pl1 sp" placeholder="Player 1" /><br />
