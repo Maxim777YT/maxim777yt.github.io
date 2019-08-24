@@ -229,16 +229,12 @@ function swp(n, t) {
 document.querySelector(n).style.display='block';
 document.querySelector(t).style.display='none';
 var thisPage = n;
-if(n == ".choose") {
-document.querySelector(".back").style.display="none";
-} else {
-document.querySelector(".back").style.display="block";
-}
 }
 function swap() {
 document.querySelector(".choose").style.display='block';
 document.querySelector(thisPage).style.display='none';
 document.querySelector(".back").style.display="none";
+thisPage = ".choose";
 }
 function check() {
 if(c == 1) {
@@ -252,6 +248,11 @@ document.querySelector(".field").classList.add('field2');
 document.querySelector(".field").classList.remove('field1');
 document.querySelector(".scr.z").style.background = "white";
 document.querySelector(".scr.x").style.background = "rgba(255, 0, 0, .85)";
+}
+if(thisPage == ".choose") {
+document.querySelector(".back").style.display="none";
+} else {
+document.querySelector(".back").style.display="block";
 }
 document.querySelector(".scr.x").style.width = `${document.querySelector(".score.x").innerHTML.toString().length * 12 + 25}px`;
 document.querySelector(".scr.z").style.width = `${document.querySelector(".score.z").innerHTML.toString().length * 12 + 25}px`;
