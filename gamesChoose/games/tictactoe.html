@@ -95,9 +95,29 @@ font-family: Arial;
 }
 </style>
 <script>
-function start(gm="mp") {
+function start(gm) {
+if(gm != "sp") {
 document.querySelector(".restart").style.display = "none";
-if(gm=="sp") return;
+if(g == false) {
+if(lastC == 0) {
+c = 1;
+lastC = 1;
+} else {
+c = 0;
+lastC = 0;
+}
+a = true;
+g = true;
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+for(let i=0; i<9; i++) {
+cells[i].style.background = "transparent";
+cells[i].removeAttribute("char");
+}
+}
+}
+}
+function restart() {
+document.querySelector(".restart").style.display = "none";
 if(g == false) {
 if(lastC == 0) {
 c = 1;
@@ -273,17 +293,17 @@ let checkInt = setInterval(check, 1000/24);
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
 </center>
 <center class="center" style="display: none;">
-<img src="images/restart.png" class="restart" style="display: none;" onclick="start('sp');">
+<img src="images/restart.png" class="restart" style="display: none;" onclick="restart();">
 <div class="field field2">
-<div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
-<div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
-<div class="cell" id="cell3" onclick='start(); mobilePress("#cell3");'></div>
-<div class="cell" id="cell4" onclick='start(); mobilePress("#cell4");'></div>
-<div class="cell" id="cell5" onclick='start(); mobilePress("#cell5");'></div>
-<div class="cell" id="cell6" onclick='start(); mobilePress("#cell6");'></div>
-<div class="cell" id="cell7" onclick='start(); mobilePress("#cell7");'></div>
-<div class="cell" id="cell8" onclick='start(); mobilePress("#cell8");'></div>
-<div class="cell" id="cell9" onclick='start(); mobilePress("#cell9");'></div>
+<div class="cell" id="cell1" onclick='start("mp"); mobilePress("#cell1");'></div>
+<div class="cell" id="cell2" onclick='start("mp"); mobilePress("#cell2");'></div>
+<div class="cell" id="cell3" onclick='start("mp"); mobilePress("#cell3");'></div>
+<div class="cell" id="cell4" onclick='start("mp"); mobilePress("#cell4");'></div>
+<div class="cell" id="cell5" onclick='start("mp"); mobilePress("#cell5");'></div>
+<div class="cell" id="cell6" onclick='start("mp"); mobilePress("#cell6");'></div>
+<div class="cell" id="cell7" onclick='start("mp"); mobilePress("#cell7");'></div>
+<div class="cell" id="cell8" onclick='start("mp"); mobilePress("#cell8");'></div>
+<div class="cell" id="cell9" onclick='start("mp"); mobilePress("#cell9");'></div>
 </div>
 <div style="display: flex; flex-direction: row; margin-left: 360px;">
 <div class="scr x" style="margin-right: 10px; display: flex; flex-direction: row;"><div class="scoreimg" style='background: url("images/ttt_x.png"); background-size: contain; margin-top: 1.5px;'></div><div class="score x">Player 1: 0</div></div><div class="scr z" style="margin-left: 10px; display: flex; flex-direction: row;"><div class="scoreimg" style='background: url("images/ttt_z.png"); background-size: contain; margin-top: 1.5px;'></div><div class="score z">Player 2: 0</div></div>
