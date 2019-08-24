@@ -374,15 +374,19 @@ let checkInt = setInterval(check, 1000/24);
   </div>
 </center>
 <center class="spchoose" style="display: none;">
+  <div style="margin-top: 130px;">
   <input class="pchoose pl1 sp" placeholder="Player 1" /><br />
   <div class="pchoose pl2 sp">AI(Easy)</div><br />
   <button class="diffchoose easy" onclick="chooseAI('Easy');">Easy</button><button class="diffchoose medium" onclick="chooseAI('Medium');">Medium</button><button class="diffchoose hard" onclick="chooseAI('Hard');">Hard</button><br />
   <button class="start sp" onclick="swp('.center', '.spchoose'); changeNames('sp');">Start</button>
+  </div>
 </center>
 <center class="mpchoose" style="display: none;">
+  <div style="margin-top: 150px;">
   <input class="pchoose pl1 mp" placeholder="Player 1" /><br />
   <input class="pchoose pl2 mp" placeholder="Player 2" /><br />
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
+  </div>
 </center>
 <center class="center" style="display: none;">
 <!-- <img src="images/back.png" class="back" style="display: none;" onclick="swap();"> -->
