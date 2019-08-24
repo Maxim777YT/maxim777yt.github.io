@@ -96,7 +96,7 @@ font-family: Arial;
 </style>
 <script>
 function start(gm) {
-if(gm != "sp") {
+if(gm != "singleplayer") {
 document.querySelector(".restart").style.display = "none";
 if(g == false) {
 if(lastC == 0) {
@@ -295,15 +295,15 @@ let checkInt = setInterval(check, 1000/24);
 <center class="center" style="display: none;">
 <img src="images/restart.png" class="restart" style="display: none;" onclick="restart();">
 <div class="field field2">
-<div class="cell" id="cell1" onclick='start("mp"); mobilePress("#cell1");'></div>
-<div class="cell" id="cell2" onclick='start("mp"); mobilePress("#cell2");'></div>
-<div class="cell" id="cell3" onclick='start("mp"); mobilePress("#cell3");'></div>
-<div class="cell" id="cell4" onclick='start("mp"); mobilePress("#cell4");'></div>
-<div class="cell" id="cell5" onclick='start("mp"); mobilePress("#cell5");'></div>
-<div class="cell" id="cell6" onclick='start("mp"); mobilePress("#cell6");'></div>
-<div class="cell" id="cell7" onclick='start("mp"); mobilePress("#cell7");'></div>
-<div class="cell" id="cell8" onclick='start("mp"); mobilePress("#cell8");'></div>
-<div class="cell" id="cell9" onclick='start("mp"); mobilePress("#cell9");'></div>
+<div class="cell" id="cell1" onclick='start(game); mobilePress("#cell1");'></div>
+<div class="cell" id="cell2" onclick='start(game); mobilePress("#cell2");'></div>
+<div class="cell" id="cell3" onclick='start(game); mobilePress("#cell3");'></div>
+<div class="cell" id="cell4" onclick='start(game); mobilePress("#cell4");'></div>
+<div class="cell" id="cell5" onclick='start(game); mobilePress("#cell5");'></div>
+<div class="cell" id="cell6" onclick='start(game); mobilePress("#cell6");'></div>
+<div class="cell" id="cell7" onclick='start(game); mobilePress("#cell7");'></div>
+<div class="cell" id="cell8" onclick='start(game); mobilePress("#cell8");'></div>
+<div class="cell" id="cell9" onclick='start(game); mobilePress("#cell9");'></div>
 </div>
 <div style="display: flex; flex-direction: row; margin-left: 360px;">
 <div class="scr x" style="margin-right: 10px; display: flex; flex-direction: row;"><div class="scoreimg" style='background: url("images/ttt_x.png"); background-size: contain; margin-top: 1.5px;'></div><div class="score x">Player 1: 0</div></div><div class="scr z" style="margin-left: 10px; display: flex; flex-direction: row;"><div class="scoreimg" style='background: url("images/ttt_z.png"); background-size: contain; margin-top: 1.5px;'></div><div class="score z">Player 2: 0</div></div>
