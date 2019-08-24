@@ -206,7 +206,7 @@ document.querySelector(".back").style.display="none";
 document.querySelector(".back").style.display="block";
 }
 }
-function swap() {
+/* function swap() {
 if(thisPage==".spchoose" || thisPage==".mpchoose") {
 var n = ".choose";
 var t = ".thisPage";
@@ -227,7 +227,7 @@ document.querySelector(".back").style.display="none";
 } else {
 document.querySelector(".back").style.display="block";
 }
-}
+} */
 function check() {
 if(c == 1) {
 document.querySelector(".field").classList.add('field1');
@@ -241,6 +241,8 @@ document.querySelector(".field").classList.remove('field1');
 document.querySelector(".scr.z").style.background = "white";
 document.querySelector(".scr.x").style.background = "rgba(255, 0, 0, .85)";
 }
+document.querySelector(".scr.x").style.width = `${document.querySelector(".score.x").innerHTML.toString().length * 15 + 25}px`;
+document.querySelector(".scr.z").style.width = `${document.querySelector(".score.z").innerHTML.toString().length * 15 + 25}px`;
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 for(let i=0; i<9; i++) {
 for(let k=0; k<9; k++) {
@@ -327,7 +329,7 @@ let checkInt = setInterval(check, 1000/24);
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
 </center>
 <center class="center" style="display: none;">
-<img src="images/back.png" class="back" style="display: none;" onclick="swap();">
+<!-- <img src="images/back.png" class="back" style="display: none;" onclick="swap();"> -->
 <img src="images/restart.png" class="restart" style="display: none;" onclick="restart();">
 <div class="field field2">
 <div class="cell" id="cell1" onclick='start(game); mobilePress("#cell1");'></div>
