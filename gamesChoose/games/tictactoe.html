@@ -95,8 +95,9 @@ font-family: Arial;
 }
 </style>
 <script>
-function start() {
+function start(gm="mp") {
 document.querySelector(".restart").style.display = "none";
+if(gm=="sp") return;
 if(g == false) {
 if(lastC == 0) {
 c = 1;
@@ -272,7 +273,7 @@ let checkInt = setInterval(check, 1000/24);
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
 </center>
 <center class="center" style="display: none;">
-<img src="images/restart.png" class="restart" style="display: none;" onclick="start();">
+<img src="images/restart.png" class="restart" style="display: none;" onclick="start("sp");">
 <div class="field field2">
 <div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
 <div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
