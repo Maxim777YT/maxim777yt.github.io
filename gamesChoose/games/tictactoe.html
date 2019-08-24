@@ -102,8 +102,8 @@ flex-direction: row;
 flex-wrap: wrap;
 border-radius: 0;
 background-size: cover;
-padding: 184px;
 z-index: 1;
+position: fixed;
 }
 </style>
 <script>
@@ -271,8 +271,10 @@ let checkInt = setInterval(check, 1000/24);
 </head>
 <body>
 <center class="choose">
+  <div style="position: fixed; top: 50%; bottom: 50%; left: 50%; right: 50%;">
   <a class="choosebtn" onclick="swp('.spchoose', '.choose');">1 player</a><br />
   <a class="choosebtn" onclick="swp('.mpchoose', '.choose');">2 players</a>
+  </div>
 </center>
 <center class="spchoose" style="display: none;">
   <input class="pchoose pl1 sp" placeholder="Player 1" /><br />
