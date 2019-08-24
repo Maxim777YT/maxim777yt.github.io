@@ -109,6 +109,13 @@ flex-direction: row;
 flex-wrap: wrap;
 z-index: 1;
 }
+.back {
+width: 50px;
+height: 50px;
+position: fixed;
+top: 0;
+left: 0;
+}
 </style>
 <script>
 function start() {
@@ -192,6 +199,34 @@ document.querySelector(".score.z").innerHTML = `${p=="mp"?p2:AI}: 0`;
 function swp(n, t) {
 document.querySelector(n).style.display='block';
 document.querySelector(t).style.display='none';
+var thisPage = n;
+if(n == ".choose") {
+document.querySelector(".back").style.display="none";
+} else {
+document.querySelector(".back").style.display="block";
+}
+}
+function swap() {
+if(thisPage==".spchoose" || thisPage==".mpchoose") {
+var n = ".choose";
+var t = ".thisPage";
+} else if(thisPage==".center") {
+if(game=="singleplayer") {
+var n = ".spchoose";
+var t = ".center";
+} else {
+var n = ".mpchoose";
+var t = ".center";
+}
+var thisPage = n;
+}
+document.querySelector(n).style.display='block';
+document.querySelector(t).style.display='none';
+if(n == ".choose") {
+document.querySelector(".back").style.display="none";
+} else {
+document.querySelector(".back").style.display="block";
+}
 }
 function check() {
 if(c == 1) {
@@ -292,6 +327,7 @@ let checkInt = setInterval(check, 1000/24);
   <button class="start mp" onclick="swp('.center', '.mpchoose'); changeNames('mp');">Start</button>
 </center>
 <center class="center" style="display: none;">
+<img src="images/back.png" class="back" style="display: none;" onclick="swap();">
 <img src="images/restart.png" class="restart" style="display: none;" onclick="restart();">
 <div class="field field2">
 <div class="cell" id="cell1" onclick='start(game); mobilePress("#cell1");'></div>
@@ -314,6 +350,7 @@ var a = false;
 var x = 0;
 var g = false;
 var lastC = 1;
+var thisPage = ".choose";
 var p1 = "Player 1";
 var p2 = "Player 2";
 var AI = "AI(Easy)";
