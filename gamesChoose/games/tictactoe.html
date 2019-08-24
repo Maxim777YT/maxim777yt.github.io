@@ -107,8 +107,8 @@ z-index: 1;
 }
 </style>
 <script>
-function start(gm) {
-if(gm != "singleplayer") {
+function start() {
+if(game != "singleplayer") {
 document.querySelector(".restart").style.display = "none";
 if(g == false) {
 if(lastC == 0) {
@@ -128,26 +128,7 @@ cells[i].removeAttribute("char");
 }
 }
 }
-function restart() {
-document.querySelector(".restart").style.display = "none";
-if(g == false) {
-if(lastC == 0) {
-c = 1;
-lastC = 1;
-} else {
-c = 0;
-lastC = 0;
-}
-a = true;
-g = true;
-let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
-for(let i=0; i<9; i++) {
-cells[i].style.background = "transparent";
-cells[i].removeAttribute("char");
-}
-}
-}
-var xAudio = document.createElement("audio");
+xAudio = document.createElement("audio");
 xAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b61298e418eb8d&attid=0.1&disp=attd&realattid=76ad29b43609df26_0.1&safe=1&zw&saddbat=ANGjdJ_7sfk-tMRAvVxYLv6QTPCoaPfbEocSfpoEu-JLggjD0KEMirwgK5FZMqSO1DT0Em3rS7ZAZC6ZKu7a_ZxGmqSGFE2BZDBUz4wyodOS7ug-PxKS-_ocYQOHf40eP4KCBJ_-XJeuIkLLD5_SdZfkgJ-jHlEibjAn4kOlSbhCRoiI4livoin6q0zNeRtzAs9mfqSVNi-uc4TZiTwDFY5q5O9VBwNtyw-KeqUwvfZ7rpSbCN071y-AjauPMx0E2R8AfYnpp1IbkJphwobN_-fiHl_duHTgOs1QqTankEyjWfDfGmW4vaiKCgX1gIIwPaIk89fSs15-B1b-WGth-kRkpGwMBMWpUAeF_zK5G71W4dvTAqdKDwAK7-zYni_3UxfnHcTXqy4iw6W1nMaLVWJ00OV8mWINwgxn07l56jBSJydumPZbRZGXW-6MvCJkOb1dDuaJ0v0u5T6kE5z_dCSbhm-wtDu2ClGrdvYjzxYJr4e8ZCLmH-gbvZRROF2heEeRJjHi1N9zEKYmkyJB6kzogJ3srupJwVnozr152D0Zyqxnee_0DmnGdR8Z-TQTePdFV9mUm-6PRYd6frHiTyGANfhLeMEvzFU28-cs9vrI5xm5nm1AfGrEk1ZEf6joIvXgYjmmjOE9Np3HdlrOG3sNzH4NTw3xpmeYOXc3lQ");
 var zAudio = document.createElement("audio");
 zAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b612d74239b309&attid=0.1&disp=attd&realattid=4267c990b8a28061_0.1&safe=1&zw&saddbat=ANGjdJ_99wFpvGq2Y2G7oWVZu5A2ofTXNsVVEvLGCgOgCh801OORi8lya4-53Hm0hUvVxza2JoEhKK4tOFzofzOI9iKbLsLWUd1Piy-Uspl0nMX6EMp1-X6BcrmQkKmyCwTAOX7buYzkkqiVXvlolohSIdLYo5ILXmYprOX_uK1eQCNhKtv7Mh4sRKoak2jRsksrt3vRAMKcR8UUAQUp134Nmh55kIP34NVVXLvMN-1WgogkDrFxMP55bnhXNbTkb7VcgiL2Je2gBPl5X4nQ8XeW96Dn2pC7qD-jD7l5U9k9jlUqH-sACw_DLcUIP0NIFh735-lAFbfK6C2_GxNny1RR9LfR61l4yHgV4Qu73-4uh3iwNSZn8sKWW_SFOKMbI3uSjVeo8qiz30ktk_N98w7p2tZ7h1Ru_dp4dveHqGtGryRV-CqLRIQyEEsLph764usDVne-wYVCUTyFQGUS5mkAf8NKC4-51lVFJ3_JidIhxT6iJTsUtget1vMFGKfOy4Lj_WhMMSC4CIe21tG8VzlsvHfun3z64KpA0SD2Umh6dWSf27DP5opB-pO_5Ce0dnNIyTwTqTMEiMm5r9JvryU-MfTCKhilOSzgd3GuXiLgs6cNT10oCZacCh64EylP04HJczh_vCodRKXCDeIs5d1iRtP4lyl_yzmoB7a24Q");
@@ -194,8 +175,8 @@ AI = `AI(${lvl})`;
 document.querySelector(".pchoose.pl2.sp").innerHTML = AI;
 }
 function changeNames(p) {
-if(p=="mp") game = "multiplayer";
-if(p=="sp") game = "singleplayer";
+if(p=="mp") var game = "multiplayer";
+if(p=="sp") var game = "singleplayer";
 document.querySelector(".restart").style.display="none";
 p1 = document.querySelector(`.pchoose.pl1.${p}`).value;
 p2 = document.querySelector(".pchoose.pl2.mp").value;
