@@ -226,8 +226,20 @@ document.querySelector(".score.x").innerHTML = `${p1}: 0`;
 document.querySelector(".score.z").innerHTML = `${p=="mp"?p2:AI}: 0`;
 }
 function swp(n, t) {
+var cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 document.querySelector(t).style.display='none';
 document.querySelector(n).style.display='block';
+if(n==".center") {
+document.querySelector(".restart").style.display="block";
+cells.forEach(cell => {
+cell.setAttribute("onclick", "mobilePress();");
+});
+} else {
+document.querySelector(".restart").style.display="none";
+cells.forEach(cell => {
+cell.setAttribute("onclick", "start(); mobilePress();");
+});
+}
 var thisPage = n;
 }
 function swap() {
