@@ -319,7 +319,7 @@ zAudio.play();
 }
 }
 function AIWork() {
-let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+var cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 if(game=="singleplayer") {
 if(c == 1) {
 if(AI=="AI(Easy)") {
@@ -348,6 +348,8 @@ mobilePress(cells[4]);
 } else if(i==1 && k==2 || i==3 && k==6 || i==4 && k==8) {
 mobilePress(cells[0]);
 } //here
+} else {
+mobilePress(cells[r]);
 }
 });
 });
