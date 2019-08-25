@@ -318,6 +318,49 @@ zAudio.play();
 }
 }
 }
+function AIWork() {
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+if(game=="singleplayer") {
+if(c == 1) {
+if(AI=="AI(Easy)") {
+var r = Math.ceil(Math.random() * 9) - 1;
+while(cells[r].getAttribute("char") == "x" || cells[r].getAttribute("char") == "0") {
+r = Math.ceil(Math.random() * 9) - 1;
+}
+let rand = Math.ceil(Math.random() * 7);
+let rand2 = Math.round(Math.random() * 1) + 5;
+if(rand < rand2) {
+cells.forEach(i => {
+cells.forEach(k => {
+if(i.getAttribute("char") == k.getAttribute("char") {
+if(i==0 && k==2) {
+mobilePress(cells[1]);
+} else if(i==0 && k==1) {
+mobilePress(cells[2]);
+} else if(i==0 && k==3) {
+mobilePress(cells[6]);
+} else if(i==0 && k==6) {
+mobilePress(cells[3]);
+} else if(i==0 && k==4) {
+mobilePress(cells[8]);
+} else if(i==0 && k==8) {
+mobilePress(cells[4]);
+}
+}
+});
+});
+} else {
+mobilePress(cells[r]);
+}
+} else if(AI=="AI(Medium)") {
+
+} else {
+
+}
+}
+}
+}
+let workAI = setInterval(AIWork, 1000/24);
 let checkInt = setInterval(check, 1000/24);
 </script>
 </head>
