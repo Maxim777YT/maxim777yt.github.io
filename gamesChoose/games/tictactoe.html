@@ -231,6 +231,11 @@ function swp(n, t) {
 var cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 document.querySelector(t).style.display='none';
 document.querySelector(n).style.display='block';
+if(n != ".choose") {
+document.querySelector(".back").style.display = "block";
+} else {
+document.querySelector(".back").style.display = "none";
+}
 /* if(n==".center") {
 document.querySelector(".restart").style.display="block";
 if(g==true && c==0) {
