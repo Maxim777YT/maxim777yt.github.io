@@ -148,6 +148,31 @@ z-index: 1;
 </style>
 </head>
 <body>
-
+<center class="spchoose" style="display: none;">
+  <div style="margin-top: 130px;">
+  <input class="pchoose pl1 sp" placeholder="Player 1" /><br />
+  <div class="pchoose pl2 sp">AI(Easy)</div><br />
+  <button class="diffchoose easy" onclick="chooseAI('Easy');">Easy</button><button class="diffchoose medium" onclick="chooseAI('Medium');">Medium</button><button class="diffchoose hard" onclick="chooseAI('Hard');">Hard</button><br />
+  <button class="start sp" onclick="swp('.center', '.spchoose'); changeNames('sp');">Start</button>
+  </div>
+</center>
+<center class="center" style="display: none;">
+<img src="images/back.png" class="back" onclick="swap();">
+<img src="images/restart.png" class="restart" style="display: none;" onclick="restart();">
+<div class="field field2">
+<div class="cell" id="cell1" onclick='start(); mobilePress("#cell1");'></div>
+<div class="cell" id="cell2" onclick='start(); mobilePress("#cell2");'></div>
+<div class="cell" id="cell3" onclick='start(); mobilePress("#cell3");'></div>
+<div class="cell" id="cell4" onclick='start(); mobilePress("#cell4");'></div>
+<div class="cell" id="cell5" onclick='start(); mobilePress("#cell5");'></div>
+<div class="cell" id="cell6" onclick='start(); mobilePress("#cell6");'></div>
+<div class="cell" id="cell7" onclick='start(); mobilePress("#cell7");'></div>
+<div class="cell" id="cell8" onclick='start(); mobilePress("#cell8");'></div>
+<div class="cell" id="cell9" onclick='start(); mobilePress("#cell9");'></div>
+</div>
+<div style="display: block;">
+<div class="scr x" style="display: flex; flex-direction: row; background: white;"><div class="scoreimg" style="background: url(&quot;images/ttt_x.png&quot;); background-size: contain; margin-top: 1.5px;"></div><div class="score x">Player 1: 0</div></div><div class="scr z" style="display: flex; flex-direction: row; background: rgba(255, 0, 0, 0.85);"><div class="scoreimg" style="background: url(&quot;images/ttt_z.png&quot;); background-size: contain; margin-top: 1.5px;"></div><div class="score z">Player 2: 0</div></div>
+</div>
+</center>
 </body>
 </html>
