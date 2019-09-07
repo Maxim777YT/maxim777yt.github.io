@@ -345,19 +345,19 @@ cells.forEach(i => {
 cells.forEach(k => {
 if(i.getAttribute("char") == k.getAttribute("char")) {
 if(i==0 && k==2) {
-mobilePress(cells[1]);
+mobilePress(`#${cells[1].id}`);
 } else if(i==0 && k==1) {
-mobilePress(cells[2]);
+mobilePress(`#${cells[2].id}`);
 } else if(i==0 && k==3) {
-mobilePress(cells[6]);
+mobilePress(`#${cells[6].id}`);
 } else if(i==0 && k==6) {
-mobilePress(cells[3]);
+mobilePress(`#${cells[3].id}`);
 } else if(i==0 && k==4) {
-mobilePress(cells[8]);
+mobilePress(`#${cells[8].id}`);
 } else if(i==0 && k==8) {
-mobilePress(cells[4]);
+mobilePress(`#${cells[4].id}`);
 } else if(i==1 && k==2 || i==3 && k==6 || i==4 && k==8) {
-mobilePress(cells[0]);
+mobilePress(`${cells[0].id}`);
 } //here
 } else {
 mobilePress(cells[r]);
