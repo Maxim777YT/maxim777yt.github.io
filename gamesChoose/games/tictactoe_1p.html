@@ -146,6 +146,236 @@ flex-wrap: wrap;
 z-index: 1;
 }
 </style>
+<script>
+function start() {
+if(game != "singleplayer") {
+document.querySelector(".restart").style.display = "none";
+if(g == false) {
+if(lastC == 0) {
+c = 1;
+lastC = 1;
+} else {
+c = 0;
+lastC = 0;
+}
+a = true;
+g = true;
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+for(let i=0; i<9; i++) {
+cells[i].style.background = "transparent";
+cells[i].removeAttribute("char");
+}
+}
+}
+}
+xAudio = document.createElement("audio");
+xAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b61298e418eb8d&attid=0.1&disp=attd&realattid=76ad29b43609df26_0.1&safe=1&zw&saddbat=ANGjdJ_7sfk-tMRAvVxYLv6QTPCoaPfbEocSfpoEu-JLggjD0KEMirwgK5FZMqSO1DT0Em3rS7ZAZC6ZKu7a_ZxGmqSGFE2BZDBUz4wyodOS7ug-PxKS-_ocYQOHf40eP4KCBJ_-XJeuIkLLD5_SdZfkgJ-jHlEibjAn4kOlSbhCRoiI4livoin6q0zNeRtzAs9mfqSVNi-uc4TZiTwDFY5q5O9VBwNtyw-KeqUwvfZ7rpSbCN071y-AjauPMx0E2R8AfYnpp1IbkJphwobN_-fiHl_duHTgOs1QqTankEyjWfDfGmW4vaiKCgX1gIIwPaIk89fSs15-B1b-WGth-kRkpGwMBMWpUAeF_zK5G71W4dvTAqdKDwAK7-zYni_3UxfnHcTXqy4iw6W1nMaLVWJ00OV8mWINwgxn07l56jBSJydumPZbRZGXW-6MvCJkOb1dDuaJ0v0u5T6kE5z_dCSbhm-wtDu2ClGrdvYjzxYJr4e8ZCLmH-gbvZRROF2heEeRJjHi1N9zEKYmkyJB6kzogJ3srupJwVnozr152D0Zyqxnee_0DmnGdR8Z-TQTePdFV9mUm-6PRYd6frHiTyGANfhLeMEvzFU28-cs9vrI5xm5nm1AfGrEk1ZEf6joIvXgYjmmjOE9Np3HdlrOG3sNzH4NTw3xpmeYOXc3lQ");
+var zAudio = document.createElement("audio");
+zAudio.setAttribute("src", "https://mail-attachment.googleusercontent.com/attachment/u/0/s/?view=att&th=16b612d74239b309&attid=0.1&disp=attd&realattid=4267c990b8a28061_0.1&safe=1&zw&saddbat=ANGjdJ_99wFpvGq2Y2G7oWVZu5A2ofTXNsVVEvLGCgOgCh801OORi8lya4-53Hm0hUvVxza2JoEhKK4tOFzofzOI9iKbLsLWUd1Piy-Uspl0nMX6EMp1-X6BcrmQkKmyCwTAOX7buYzkkqiVXvlolohSIdLYo5ILXmYprOX_uK1eQCNhKtv7Mh4sRKoak2jRsksrt3vRAMKcR8UUAQUp134Nmh55kIP34NVVXLvMN-1WgogkDrFxMP55bnhXNbTkb7VcgiL2Je2gBPl5X4nQ8XeW96Dn2pC7qD-jD7l5U9k9jlUqH-sACw_DLcUIP0NIFh735-lAFbfK6C2_GxNny1RR9LfR61l4yHgV4Qu73-4uh3iwNSZn8sKWW_SFOKMbI3uSjVeo8qiz30ktk_N98w7p2tZ7h1Ru_dp4dveHqGtGryRV-CqLRIQyEEsLph764usDVne-wYVCUTyFQGUS5mkAf8NKC4-51lVFJ3_JidIhxT6iJTsUtget1vMFGKfOy4Lj_WhMMSC4CIe21tG8VzlsvHfun3z64KpA0SD2Umh6dWSf27DP5opB-pO_5Ce0dnNIyTwTqTMEiMm5r9JvryU-MfTCKhilOSzgd3GuXiLgs6cNT10oCZacCh64EylP04HJczh_vCodRKXCDeIs5d1iRtP4lyl_yzmoB7a24Q");
+window.addEventListener('keydown', function(e) {
+if(e.keyCode == 103) {
+start();
+mobilePress("#cell1");
+}
+if(e.keyCode == 104) {
+start();
+mobilePress("#cell2");
+}
+if(e.keyCode == 105) {
+start();
+mobilePress("#cell3");
+}
+if(e.keyCode == 100) {
+start();
+mobilePress("#cell4");
+}
+if(e.keyCode == 101) {
+start();
+mobilePress("#cell5");
+}
+if(e.keyCode == 102) {
+start();
+mobilePress("#cell6");
+}
+if(e.keyCode == 97) {
+start();
+mobilePress("#cell7");
+}
+if(e.keyCode == 98) {
+start();
+mobilePress("#cell8");
+}
+if(e.keyCode == 99) {
+start();
+mobilePress("#cell9");
+}
+})
+function chooseAI(lvl) {
+AI = `AI(${lvl})`;
+document.querySelector(".pchoose.pl2.sp").innerHTML = AI;
+}
+function changeNames(p) {
+if(p=="mp") var game = "multiplayer";
+if(p=="sp") var game = "singleplayer";
+document.querySelector(".restart").style.display="none";
+p1 = document.querySelector(`.pchoose.pl1.${p}`).value;
+p2 = document.querySelector(".pchoose.pl2.mp").value;
+if(p1=="" || p1==" ") p1 = "Player 1";
+if(p2=="" || p2==" ") p2 = "Player 2";
+document.querySelector(".score.x").innerHTML = `${p1}: 0`;
+document.querySelector(".score.z").innerHTML = `${p=="mp"?p2:AI}: 0`;
+}
+function swp(n, t) {
+var cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+document.querySelector(t).style.display='none';
+document.querySelector(n).style.display='block';
+if(n != ".choose") {
+document.querySelector(".back").style.display = "block";
+} else {
+document.querySelector(".back").style.display = "none";
+}
+/* if(n==".center") {
+document.querySelector(".restart").style.display="block";
+if(g==true && c==0) {
+cells.forEach(cell => {
+cell.setAttribute("onclick", "mobilePress();");
+});
+}
+} else {
+document.querySelector(".restart").style.display="none";
+cells.forEach(cell => {
+cell.setAttribute("onclick", "start(); mobilePress();");
+});
+} */
+var thisPage = n;
+}
+function check() {
+if(c == 1) {
+document.querySelector(".field").classList.add('field1');
+document.querySelector(".field").classList.remove('field2');
+document.querySelector(".scr.x").style.background = "white";
+document.querySelector(".scr.z").style.background = "rgba(255, 0, 0, .85)";
+}
+if(c == 0) {
+document.querySelector(".field").classList.add('field2');
+document.querySelector(".field").classList.remove('field1');
+document.querySelector(".scr.z").style.background = "white";
+document.querySelector(".scr.x").style.background = "rgba(255, 0, 0, .85)";
+}
+document.querySelector(".scr.x").style.width = `${document.querySelector(".score.x").innerHTML.toString().length * 12 + 25}px`;
+document.querySelector(".scr.z").style.width = `${document.querySelector(".score.z").innerHTML.toString().length * 12 + 25}px`;
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+for(let i=0; i<9; i++) {
+for(let k=0; k<9; k++) {
+for(let j=0; j<9; j++) {
+if(cells[i].getAttribute("char") == cells[k].getAttribute("char") && cells[i].getAttribute("char") == cells[j].getAttribute("char")) {
+if(cells[i].getAttribute("char") == "x" || cells[i].getAttribute("char") == "0") {
+if(i==0&&k==1&&j==2||i==0&&k==3&&j==6||i==0&&k==4&&j==8||i==2&&k==4&&j==6||i==2&&k==5&&j==8||i==6&&k==7&&j==8||i==1&&k==4&&j==7||i==3&&k==4&&j==5) {
+if(cells[i].getAttribute("char") == "x") {
+cells[i].style.background = 'url("images/X_white.jpeg")';
+cells[k].style.background = 'url("images/X_white.jpeg")';
+cells[j].style.background = 'url("images/X_white.jpeg")';
+cells[i].style.backgroundSize = 'contain';
+cells[k].style.backgroundSize = 'contain';
+cells[j].style.backgroundSize = 'contain';
+if(a==true) document.querySelector(".score.x").innerHTML = `${p1}: ${Number(document.querySelector(".score.x").innerHTML.substring(p1.length+2, document.querySelector(".score.x").innerHTML.length))+1}`;
+if(game=="singleplayer") document.querySelector(".restart").style.display = "block";
+a = false;
+g = false;
+} else {
+cells[i].style.background = 'url("images/0_white.jpeg")';
+cells[k].style.background = 'url("images/0_white.jpeg")';
+cells[j].style.background = 'url("images/0_white.jpeg")';
+cells[i].style.backgroundSize = 'contain';
+cells[k].style.backgroundSize = 'contain';
+cells[j].style.backgroundSize = 'contain';
+if(a==true) document.querySelector(".score.z").innerHTML = `${p2}: ${Number(document.querySelector(".score.z").innerHTML.substring(p2.length+2, document.querySelector(".score.z").innerHTML.length))+1}`;
+if(game=="singleplayer") document.querySelector(".restart").style.display = "block";
+a = false;
+g = false;
+}
+}
+}
+} else {
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+if(cells[0].getAttribute("char") && cells[1].getAttribute("char") && cells[2].getAttribute("char") && cells[3].getAttribute("char") && cells[4].getAttribute("char") && cells[5].getAttribute("char") && cells[6].getAttribute("char") && cells[7].getAttribute("char") && cells[8].getAttribute("char")) {
+if(game=="singleplayer") document.querySelector(".restart").style.display = "block";
+a = false;
+g = false;
+}
+}
+}
+}
+}
+}
+function mobilePress(id) {
+if(a == true) {
+if(document.querySelector(id).getAttribute("char") != "x" && document.querySelector(id).getAttribute("char") != "0") {
+if(c == 0) {
+c = 1;
+document.querySelector(id).setAttribute("char", "x");
+document.querySelector(id).style.background =  "url('images/ttt_x.png')";
+document.querySelector(id).style.backgroundSize = "cover";
+xAudio.play();
+}
+else {
+AIWork();
+}
+}
+}
+}
+function AIWork() {
+var cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+/* if(game=="singleplayer") {
+console.log(1);
+if(c == 1) {
+console.log(2);
+if(AI=="AI(Easy)") {
+console.log(3);
+var r = Math.ceil(Math.random() * 9) - 1;
+while(cells[r].getAttribute("char") == "x" || cells[r].getAttribute("char") == "0") {
+r = Math.ceil(Math.random() * 9) - 1;
+}
+let rand = Math.ceil(Math.random() * 7);
+let rand2 = Math.round(Math.random() * 1) + 5;
+if(rand < rand2) {
+console.log(4);
+cells.forEach(i => {
+cells.forEach(k => {
+if(i.getAttribute("char") == k.getAttribute("char")) {
+console.log(5);
+if(i==0 && k==2) {
+mobilePress(cells[1]);
+} else if(i==0 && k==1) {
+mobilePress(cells[2]);
+} else if(i==0 && k==3) {
+mobilePress(cells[6]);
+} else if(i==0 && k==6) {
+mobilePress(cells[3]);
+} else if(i==0 && k==4) {
+mobilePress(cells[8]);
+} else if(i==0 && k==8) {
+mobilePress(cells[4]);
+} else if(i==1 && k==2 || i==3 && k==6 || i==4 && k==8) {
+mobilePress(cells[0]);
+} //here
+} else {
+mobilePress(cells[r]);
+}
+});
+});
+} else {
+mobilePress(cells[r]);
+}
+} else if(AI=="AI(Medium)") {
+
+} else {
+
+}
+}
+} */
+}
+let checkInt = setInterval(check, 1000/24);
 </head>
 <body>
 <a href="tictactoe.html" class="back"><img src="images/back.png" style="width: 50px; height: 50px;"></a>
