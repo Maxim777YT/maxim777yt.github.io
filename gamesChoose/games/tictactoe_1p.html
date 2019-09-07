@@ -220,8 +220,8 @@ function changeNames(p) {
 if(p=="mp") var game = "multiplayer";
 if(p=="sp") var game = "singleplayer";
 document.querySelector(".restart").style.display="none";
-p1 = document.querySelector(`.pchoose.pl1.${p}`).value;
-p2 = document.querySelector(".pchoose.pl2.mp").innerHTML;
+p1 = document.querySelector(`.pchoose.pl1.sp`).value;
+p2 = document.querySelector(".pchoose.pl2.sp").innerHTML;
 if(p1=="" || p1==" ") p1 = "Player 1";
 if(p2=="" || p2==" ") p2 = "Player 2";
 document.querySelector(".score.x").innerHTML = `${p1}: 0`;
