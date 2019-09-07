@@ -315,13 +315,17 @@ if(a == true) {
 if(document.querySelector(id).getAttribute("char") != "x" && document.querySelector(id).getAttribute("char") != "0") {
 if(c == 0) {
 c = 1;
-} else {
-c = 0;
-}
 document.querySelector(id).setAttribute("char", "x");
 document.querySelector(id).style.background =  "url('images/ttt_x.png')";
 document.querySelector(id).style.backgroundSize = "cover";
 xAudio.play();
+} else {
+c = 0;
+document.querySelector(id).setAttribute("char", "0");
+document.querySelector(id).style.background =  "url('images/ttt_z.png')";
+document.querySelector(id).style.backgroundSize = "cover";
+zAudio.play();
+}
 }
 }
 }
