@@ -150,7 +150,7 @@ z-index: 1;
 </style>
 <script>
 function start() {
-if(game != "singleplayer") {
+if(lastC == 1) {
 document.querySelector(".restart").style.display = "none";
 if(g == false) {
 if(lastC == 0) {
@@ -167,6 +167,27 @@ for(let i=0; i<9; i++) {
 cells[i].style.background = "transparent";
 cells[i].removeAttribute("char");
 }
+}
+} else {
+
+}
+}
+function restart() {
+document.querySelector(".restart").style.display = "none";
+if(g == false) {
+if(lastC == 0) {
+c = 1;
+lastC = 1;
+} else {
+c = 0;
+lastC = 0;
+}
+a = true;
+g = true;
+let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
+for(let i=0; i<9; i++) {
+cells[i].style.background = "transparent";
+cells[i].removeAttribute("char");
 }
 }
 }
@@ -281,9 +302,10 @@ cells[i].style.backgroundSize = 'contain';
 cells[k].style.backgroundSize = 'contain';
 cells[j].style.backgroundSize = 'contain';
 if(a==true) document.querySelector(".score.x").innerHTML = `${p1}: ${Number(document.querySelector(".score.x").innerHTML.substring(p1.length+2, document.querySelector(".score.x").innerHTML.length))+1}`;
-if(game=="singleplayer") document.querySelector(".restart").style.display = "block";
+document.querySelector(".restart").style.display = "block";
 a = false;
 g = false;
+
 } else {
 cells[i].style.background = 'url("images/0_white.jpeg")';
 cells[k].style.background = 'url("images/0_white.jpeg")';
@@ -292,16 +314,17 @@ cells[i].style.backgroundSize = 'contain';
 cells[k].style.backgroundSize = 'contain';
 cells[j].style.backgroundSize = 'contain';
 if(a==true) document.querySelector(".score.z").innerHTML = `${p2}: ${Number(document.querySelector(".score.z").innerHTML.substring(p2.length+2, document.querySelector(".score.z").innerHTML.length))+1}`;
-if(game=="singleplayer") document.querySelector(".restart").style.display = "block";
+document.querySelector(".restart").style.display = "block";
 a = false;
 g = false;
+document.querySelector(".restart").style.display = "block";
 }
 }
 }
 } else {
 let cells = [document.querySelector("#cell1"), document.querySelector("#cell2"), document.querySelector("#cell3"), document.querySelector("#cell4"), document.querySelector("#cell5"), document.querySelector("#cell6"), document.querySelector("#cell7"), document.querySelector("#cell8"), document.querySelector("#cell9")];
 if(cells[0].getAttribute("char") && cells[1].getAttribute("char") && cells[2].getAttribute("char") && cells[3].getAttribute("char") && cells[4].getAttribute("char") && cells[5].getAttribute("char") && cells[6].getAttribute("char") && cells[7].getAttribute("char") && cells[8].getAttribute("char")) {
-if(game=="singleplayer") document.querySelector(".restart").style.display = "block";
+document.querySelector(".restart").style.display = "block";
 a = false;
 g = false;
 }
