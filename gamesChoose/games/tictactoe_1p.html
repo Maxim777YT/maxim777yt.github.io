@@ -2,7 +2,7 @@
 <html>
 <head>
 <link href="images/ttt.ico" type = "image/x-icon" rel="shortcut icon">
-<title>Tic Tac Toe by Maxim777YT</title>
+<title>Tic Tac Toe by Maxim777</title>
 <style>
 .field1 {
 background: url("images/78884DBD-B0BB-42B3-8FB1-CFBC4F18A4A3.png");
@@ -39,10 +39,6 @@ margin: 10px;
 padding: 0;
 background-size: contain;
 background-repeat: no-repeat;
-}
-#cell2, #cell5, #cell8 {
-margin-right: 32px;
-margin-left: 32px;
 }
 body {
 background-image: url("images/plank_bg.jpg");
@@ -319,11 +315,13 @@ if(a == true) {
 if(document.querySelector(id).getAttribute("char") != "x" && document.querySelector(id).getAttribute("char") != "0") {
 if(c == 0) {
 c = 1;
+} else {
+c = 0;
+}
 document.querySelector(id).setAttribute("char", "x");
 document.querySelector(id).style.background =  "url('images/ttt_x.png')";
 document.querySelector(id).style.backgroundSize = "cover";
 xAudio.play();
-}
 else {
 
 }
