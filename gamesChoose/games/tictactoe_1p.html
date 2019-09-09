@@ -361,16 +361,15 @@ while(cells[r].getAttribute("char") == "x" || cells[r].getAttribute("char") == "
 r = Math.ceil(Math.random() * 9) - 1;
 }
 let rand = Math.ceil(Math.random() * 7);
-let rand2 = Math.round(Math.random() * 1) + 6;
-if(rand < rand2) {
+if(rand < 7) {
 cells.forEach(i => {
 cells.forEach(k => {
 if(i.getAttribute("char") == k.getAttribute("char")) {
-if(i==0 && k==2) {
+if(i==0 && k==2 || i==4 && k==7) {
 mobilePress(`#${cells[1].id}`);
-} else if(i==0 && k==1) {
+} else if(i==0 && k==1 || i==4 && k==6 || i==5 && k==8) {
 mobilePress(`#${cells[2].id}`);
-} else if(i==0 && k==3) {
+} else if(i==0 && k==3 || i==7 && k==8 || i==2 && k==4) {
 mobilePress(`#${cells[6].id}`);
 } else if(i==0 && k==6) {
 mobilePress(`#${cells[3].id}`);
@@ -380,7 +379,10 @@ mobilePress(`#${cells[8].id}`);
 mobilePress(`#${cells[4].id}`);
 } else if(i==1 && k==2 || i==3 && k==6 || i==4 && k==8) {
 mobilePress(`${cells[0].id}`);
-} //here
+} else if(i==2 && k==4) {
+mobilePress("#cell7");
+}
+
 } else {
 mobilePress(`#${cells[r].id}`);
 }
