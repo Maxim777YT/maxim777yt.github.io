@@ -360,8 +360,6 @@ var r = Math.ceil(Math.random() * 9) - 1;
 while(cells[r].getAttribute("char") == "x" || cells[r].getAttribute("char") == "0") {
 r = Math.ceil(Math.random() * 9) - 1;
 }
-let rand = Math.ceil(Math.random() * 7);
-if(rand < 7) {
 cells.forEach(i => {
 cells.forEach(k => {
 if(i.getAttribute("char") == k.getAttribute("char")) {
@@ -392,9 +390,7 @@ mobilePress(`#${cells[r].id}`);
 }
 });
 });
-} else {
-mobilePress(`#${cells[r].id}`);
-}
+if(c==1) mobilePress(`#${cells[r].id}`);
 } else if(AI=="AI(Medium)") {
 
 } else {
