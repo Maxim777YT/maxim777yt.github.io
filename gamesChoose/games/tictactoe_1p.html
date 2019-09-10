@@ -371,16 +371,20 @@ mobilePress(`#${cells[1].id}`);
 mobilePress(`#${cells[2].id}`);
 } else if(i==0 && k==3 || i==7 && k==8 || i==2 && k==4) {
 mobilePress(`#${cells[6].id}`);
-} else if(i==0 && k==6) {
+} else if(i==0 && k==6 || i==4 && k==5) {
 mobilePress(`#${cells[3].id}`);
-} else if(i==0 && k==4) {
+} else if(i==0 && k==4 || i==6 && k==7 || i==2 && k==5) {
 mobilePress(`#${cells[8].id}`);
-} else if(i==0 && k==8) {
+} else if(i==0 && k==8 || i==2 && k==6 || i==3 && k==5 || i==1 && k==7) {
 mobilePress(`#${cells[4].id}`);
 } else if(i==1 && k==2 || i==3 && k==6 || i==4 && k==8) {
 mobilePress(`${cells[0].id}`);
-} else if(i==2 && k==4) {
+} else if(i==2 && k==4 || i==0 && k==3 || i==7 && k==8) {
 mobilePress("#cell7");
+} else if(i==3 && k==4 || i==2 && k==8) {
+mobilePress("#cell6");         
+} else if(i==6 && k==8 || i==1 && k==4) {
+mobilePress("#cell8"); 
 }
 
 } else {
