@@ -342,36 +342,47 @@ var r = Math.ceil(Math.random() * 9) - 1;
 while(cells[r].getAttribute("char") == "x" || cells[r].getAttribute("char") == "0") {
 r = Math.ceil(Math.random() * 9) - 1;
 }
+var pressed = false;
 cells.forEach(i => {
 cells.forEach(k => {
 if(i.getAttribute("char") == k.getAttribute("char")) {
 if(i==0 && k==2 || i==4 && k==7) {
 mobilePress(`#${cells[1].id}`);
+pressed = true;
 } else if(i==0 && k==1 || i==4 && k==6 || i==5 && k==8) {
 mobilePress(`#${cells[2].id}`);
+pressed = true;
 } else if(i==0 && k==3 || i==7 && k==8 || i==2 && k==4) {
 mobilePress(`#${cells[6].id}`);
+pressed = true;
 } else if(i==0 && k==6 || i==4 && k==5) {
 mobilePress(`#${cells[3].id}`);
+pressed = true;
 } else if(i==0 && k==4 || i==6 && k==7 || i==2 && k==5) {
 mobilePress(`#${cells[8].id}`);
+pressed = true;
 } else if(i==0 && k==8 || i==2 && k==6 || i==3 && k==5 || i==1 && k==7) {
 mobilePress(`#${cells[4].id}`);
+pressed = true:
 } else if(i==1 && k==2 || i==3 && k==6 || i==4 && k==8) {
 mobilePress(`${cells[0].id}`);
+pressed = true;
 } else if(i==2 && k==4 || i==0 && k==3 || i==7 && k==8) {
 mobilePress("#cell7");
+pressed = true;
 } else if(i==3 && k==4 || i==2 && k==8) {
-mobilePress("#cell6");         
+mobilePress("#cell6");
+pressed = true;
 } else if(i==6 && k==8 || i==1 && k==4) {
 mobilePress("#cell8"); 
+pressed = true;
 }
-
-} else {
+}
+});
+});
+if(!pressed) {
 mobilePress(`#${cells[r].id}`);
 }
-});
-});
 if(c==1) mobilePress(`#${cells[r].id}`);
 } else if(AI=="AI(Medium)") {
 
