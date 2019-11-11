@@ -1,0 +1,7 @@
+<form action="/download/font/9303" method="post" id="temp-file-download-font-form" accept-charset="UTF-8"><div><div class="captcha"><input type="hidden" name="captcha_sid" value="103886448" />
+<input type="hidden" name="captcha_token" value="d8c96a7ea6ff027dc91671f513e92c3d" />
+<input type="hidden" name="captcha_response" value="Google no captcha" />
+<div class="g-recaptcha" data-sitekey="6LfBoFcUAAAAAHhf5gDvAGboIPEywad4gJAdbrzx" data-theme="light" data-type="image"></div><input type="hidden" name="captcha_cacheable" value="1" />
+</div><input type="submit" id="edit-submit" name="op" value="Скачать" class="form-submit button primary" /><input type="hidden" name="form_build_id" value="form-isNZQWhHYBbHT7Z4z2g9sjOHjMxajh7huWZbsGj_l_s" />
+<input type="hidden" name="form_id" value="temp_file_download_font_form" />
+</div></form>
