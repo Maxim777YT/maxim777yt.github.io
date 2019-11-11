@@ -58,6 +58,8 @@
 	      position: fixed;
 	      top: 0;
 	      right: 0;
+	      width: 100%;
+	      font-size: 10pt;
       }
       .h {
 	      background: #ccc;
@@ -108,6 +110,12 @@
 		 setCookie("tm", "false");
 	 if(!(getCookie("theme") == "black"))
 		 setCookie("theme, white");
+	i = setInterval(function() {
+		if(getCookie("tm") == "true")
+			document.querySelector(".tb").style.display="block";
+		else if(getCookie("tm") == "false")
+			document.querySelector(".tb").style.display="none";
+	}, 10);
 </script>
 </body>
 </html>
