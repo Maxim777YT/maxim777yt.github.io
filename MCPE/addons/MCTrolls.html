@@ -132,19 +132,19 @@
 	}, 10);
         setInterval(function() {
                 if(getCookie("theme") == "black") {
-                                document.querySelectorAll("body").setAttribute("bgcolor", "#000");
-                                document.querySelectorAll(".img").style.border = "5px solid white";
-                                document.querySelectorAll(".p").style.color = "#fff";
-                                document.querySelectorAll(".dnld").style.border = "7px double red";
-                                document.querySelectorAll(".dnld").style.background = "#005";
-                                document.querySelectorAll(".dnlt").style.color = "#fff";
+                                document.querySelector("body").setAttribute("bgcolor", "#000");
+                                document.querySelectorAll(".img").forEach(el => { el.style.border = "5px solid white"; });
+                                document.querySelectorAll(".p").forEach(el => { el.style.color = "#fff"; });
+                                document.querySelectorAll(".dnld").forEach( el => { el.style.border = "7px double red"; });
+                                document.querySelectorAll(".dnld").forEach(el => { el.style.background = "#005";});
+                                document.querySelectorAll(".dnlt").forEach(el => { el.style.color = "#fff"; });
                 } else if(getCookie("theme") == "white") {
-                                document.querySelectorAll("body").setAttribute("bgcolor", "#fff");
-                                document.querySelectorAll(".img").style.border = "5px solid black";
-                                document.querySelectorAll(".p").style.color = "#000";
-                                document.querySelectorAll(".dnld").style.border = "7px double black";
-                                document.querySelectorAll(".dnld").style.background = "#fff";
-                                document.querySelectorAll(".dnlt").style.color = "#000";
+                                document.body.backgroundColor = "#fff";
+                                document.querySelectorAll(".img").forEach(el => { el.style.border = "5px solid black"; });
+                                document.querySelectorAll(".p").forEach(el => { el.style.color = "#000"; });
+                                document.querySelectorAll(".dnld").forEach(el => { el.style.border = "7px double black"; });
+                                document.querySelectorAll(".dnld").forEach(el => { el.style.background = "#fff"; });
+                                document.querySelectorAll(".dnlt").forEach(el => { el.style.color = "#000"; });
                 }
         }, 10);
 </script>
