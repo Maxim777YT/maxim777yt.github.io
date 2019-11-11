@@ -29,6 +29,7 @@
 		    else if(getCookie("tm") == "true")
 			    setCookie("tm", "false");
 	    }
+            
     </script>
     <style>
        @font-face {
@@ -111,12 +112,24 @@
 		 setCookie("tm", "false");
 	 if(!(getCookie("theme") == "black"))
 		 setCookie("theme, white");
-	i = setInterval(function() {
+	 let i = setInterval(function() {
 		if(getCookie("tm") == "true")
 			document.querySelector(".tb").style.display="block";
 		else if(getCookie("tm") == "false")
 			document.querySelector(".tb").style.display="none";
 	}, 10);
+        let k = setInterval(function() {
+if(getCookie("theme") == "black") {
+document.querySelector("body").setAttribute("bgcolor", "#000");
+document.querySelector(".img").style.border = "5px solid white";
+document.querySelector(".p").style.color = "#fff";
+document.querySelector(".dnld").style.border = "7px double red";
+document.querySelector(".dnld").style.background = "#005";
+document.querySelector(".dnlt").style.color = "#fff";
+} else if(getCookie("theme") == "white") {
+
+}
+        }, 10)
 </script>
 </body>
 </html>
