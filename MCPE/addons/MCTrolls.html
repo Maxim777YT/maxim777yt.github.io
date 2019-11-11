@@ -125,15 +125,19 @@
 <script>
 	document.querySelector("#lol").style.height=Number(document.querySelector("#lol").height) + Number(document.querySelector("#lol").height)/3;
         document.querySelector(".cth").style.width = document.querySelector("#ct2").width;
-	if(!(getCookie("tm") == "true")) 
+	if(!(getCookie("tm") == "true"))
 		 setCookie("tm", "false");
 	if(!(getCookie("theme") == "black"))
 		 setCookie("theme, white");
 	 setInterval(function() {
-		if(getCookie("tm") == "true")
+		if(getCookie("tm") == "true") {
 			document.querySelector(".tb").style.display="block";
-		else if(getCookie("tm") == "false")
+                        document.querySelector(".ct").style.borderRadius = "15% 15% 0 0";
+                }
+		else if(getCookie("tm") == "false") {
 			document.querySelector(".tb").style.display="none";
+                        document.querySelector(".ct").style.borderRadius = "0";
+                }
 	}, 10);
         setInterval(function() {
                 if(getCookie("theme") == "black") {
