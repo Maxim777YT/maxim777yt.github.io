@@ -143,7 +143,7 @@
                                 document.querySelectorAll(".dnld").forEach(el => { el.style.background = "#005";});
                                 document.querySelectorAll(".dnlt").forEach(el => { el.style.color = "#fff"; });
                 } else if(getCookie("theme") == "white") {
-                                document.body.backgroundColor = "#fff";
+                                document.querySelector("body").setAttribute("bgcolor", "#fff");
                                 document.querySelectorAll(".img").forEach(el => { el.style.border = "5px solid black"; });
                                 document.querySelectorAll(".p").forEach(el => { el.style.color = "#000"; });
                                 document.querySelectorAll(".dnld").forEach(el => { el.style.border = "7px double black"; });
