@@ -58,7 +58,6 @@
 	      position: fixed;
 	      bottom: 0;
 	      right: 0;
-	      font-size: 20pt;
       }
       .cth {
 	      height: 30pt;
@@ -94,7 +93,7 @@
   </head>
   <body bgcolor="#fff" link="#10cc10" vlink="#20bb20" alink="15bc15">
 	  <h1 class="header"><center class="h">MCTrolls</center></h1>
-	  <div class="ct"><div class="tb" style="display: none;"><div class="ctb" onclick='setCookie("theme", "white")'>Белая</div><br><div class="ctb" onclick='setCookie("theme", "black")'>Чёрная</div><br></div><h1 class="cth" onclick="ctm();">Тема</h1></div>
+	  <div class="ct"><div class="tb" style="display: none;"><div class="ctb" onclick='setCookie("theme", "white")'><h1>Белая</h1></div><div class="ctb" onclick='setCookie("theme", "black")'><h1>Чёрная</h1></div></div><h1 class="cth" onclick="ctm();">Тема</h1></div>
 	  <div id="lol"></div>
 	  <br>
     <p class="p">MCTrolls это набор ресурсов и для русскоговорящих, и для англоговорящих людей. Он добавляет два новых языка в Майнкрафт: "Русский(Германия)" и "SOmebOdy Once tOld me the wOrld is gOnna rOll me". Эти языки шуточные и изменяют некоторый текст в майнкрафте с обычного на смешной. Также он изменяет пластинки на диски с другими песнями. Внизу вы можете увидеть несколько примеров:<br><br><p>
@@ -123,28 +122,28 @@
 		 setCookie("tm", "false");
 	 if(!(getCookie("theme") == "black"))
 		 setCookie("theme, white");
-	 let i = setInterval(function() {
+	 setInterval(function() {
 		if(getCookie("tm") == "true")
 			document.querySelector(".tb").style.display="block";
 		else if(getCookie("tm") == "false")
 			document.querySelector(".tb").style.display="none";
 	}, 10);
-        let k = setInterval(function() {
-if(getCookie("theme") == "black") {
-document.querySelectorAll("body").setAttribute("bgcolor", "#000");
-document.querySelectorAll(".img").style.border = "5px solid white";
-document.querySelectorAll(".p").style.color = "#fff";
-document.querySelectorAll(".dnld").style.border = "7px double red";
-document.querySelectorAll(".dnld").style.background = "#005";
-document.querySelectorAll(".dnlt").style.color = "#fff";
-} else if(getCookie("theme") == "white") {
-document.querySelectorAll("body").setAttribute("bgcolor", "#fff");
-document.querySelectorAll(".img").style.border = "5px solid black";
-document.querySelectorAll(".p").style.color = "#000";
-document.querySelectorAll(".dnld").style.border = "7px double black";
-document.querySelectorAll(".dnld").style.background = "#fff";
-document.querySelectorAll(".dnlt").style.color = "#000";
-}
+        setInterval(function() {
+                if(getCookie("theme") == "black") {
+                                document.querySelectorAll("body").setAttribute("bgcolor", "#000");
+                                document.querySelectorAll(".img").style.border = "5px solid white";
+                                document.querySelectorAll(".p").style.color = "#fff";
+                                document.querySelectorAll(".dnld").style.border = "7px double red";
+                                document.querySelectorAll(".dnld").style.background = "#005";
+                                document.querySelectorAll(".dnlt").style.color = "#fff";
+                } else if(getCookie("theme") == "white") {
+                                document.querySelectorAll("body").setAttribute("bgcolor", "#fff");
+                                document.querySelectorAll(".img").style.border = "5px solid black";
+                                document.querySelectorAll(".p").style.color = "#000";
+                                document.querySelectorAll(".dnld").style.border = "7px double black";
+                                document.querySelectorAll(".dnld").style.background = "#fff";
+                                document.querySelectorAll(".dnlt").style.color = "#000";
+                }
         }, 10);
 </script>
 </body>
