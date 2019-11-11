@@ -120,19 +120,19 @@
 	}, 10);
         let k = setInterval(function() {
 if(getCookie("theme") == "black") {
-document.querySelector("body").setAttribute("bgcolor", "#000");
-document.querySelector(".img").style.border = "5px solid white";
-document.querySelector(".p").style.color = "#fff";
-document.querySelector(".dnld").style.border = "7px double red";
-document.querySelector(".dnld").style.background = "#005";
-document.querySelector(".dnlt").style.color = "#fff";
+document.querySelectorAll("body").setAttribute("bgcolor", "#000");
+document.querySelectorAll(".img").style.border = "5px solid white";
+document.querySelectorAll(".p").style.color = "#fff";
+document.querySelectorAll(".dnld").style.border = "7px double red";
+document.querySelectorAll(".dnld").style.background = "#005";
+document.querySelectorAll(".dnlt").style.color = "#fff";
 } else if(getCookie("theme") == "white") {
-document.querySelector("body").setAttribute("bgcolor", "#fff");
-document.querySelector(".img").style.border = "5px solid black";
-document.querySelector(".p").style.color = "#0””";
-document.querySelector(".dnld").style.border = "7px double black";
-document.querySelector(".dnld").style.background = "#fff";
-document.querySelector(".dnlt").style.color = "#000";
+document.querySelectorAll("body").setAttribute("bgcolor", "#fff");
+document.querySelectorAll(".img").style.border = "5px solid black";
+document.querySelectorAll(".p").style.color = "#0””";
+document.querySelectorAll(".dnld").style.border = "7px double black";
+document.querySelectorAll(".dnld").style.background = "#fff";
+document.querySelectorAll(".dnlt").style.color = "#000";
 }
         }, 10)
 </script>
