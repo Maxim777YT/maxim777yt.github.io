@@ -4,6 +4,32 @@
     <link rel="shortcut icon" type="image/x-icon" href="main.ico">
     <title>MCTrolls</title>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css"/>
+    <script>
+	    function setCookie(cname, cvalue) {
+  document.cookie = cname + "=" + cvalue + ";path=/";
+            }
+	    function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+            }
+	    function ctm() {
+		    if(getCookie("tm") == "false")
+		            setCookie("tm", "true");
+		    else if(getCookie("tm") == "true")
+			    setCookie("tm", "false");
+	    }
+    </script>
     <style>
        @font-face {
 	       font-family: Minecraft;
@@ -27,6 +53,12 @@
 	color: #000;
 	font-family: Minecraft, "MinecraftiaRegular", Arial;
       }
+      .ct {
+	      background: #aaa;
+	      position: fixed;
+	      top: 0;
+	      right: 0;
+      }
       .h {
 	      background: #ccc;
       }
@@ -47,6 +79,7 @@
   </head>
   <body bgcolor="#fff" link="#10cc10" vlink="#20bb20" alink="15bc15">
 	  <h1 class="header"><center class="h">MCTrolls</center></h1>
+	  <div class="ct" onclick="ctm();">Тема<div class="tb" style="display: none;"><br><div onclick='setCookie("theme", "white")'>Белая</div><br><div onclick='setCookie("theme", "black")'>Чёрная</div></div></div>
 	  <div id="lol"></div>
 	  <br>
     <p class="p">MCTrolls это набор ресурсов и для русскоговорящих, и для англоговорящих людей. Он добавляет два новых языка в Майнкрафт: "Русский(Германия)" и "SOmebOdy Once tOld me the wOrld is gOnna rOll me". Эти языки шуточные и изменяют некоторый текст в майнкрафте с обычного на смешной. Также он изменяет пластинки на диски с другими песнями. Внизу вы можете увидеть несколько примеров:<br><br><p>
@@ -71,7 +104,10 @@
           </div>
 <script>
 	 document.querySelector("#lol").style.height=Number(document.querySelector("#lol").height) + Number(document.querySelector("#lol"))/3;
-         
+         if(!(getCookie("tm") == "true")) 
+		 setCookie("tm", "false");
+	 if(!(getCookie("theme") == "black"))
+		 setCookie("theme, white");
 </script>
 </body>
 </html>
