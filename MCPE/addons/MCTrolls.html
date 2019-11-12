@@ -177,6 +177,12 @@
 	document.querySelector(".ct").onmouseout = function() {
 		document.querySelector(".tb").style.display = "none";
 	}
+	window.onmousemove = function() {
+		if(document.querySelectorAll(".ctb:hover").length == 1)
+			document.querySelector(".ctb:hover").style.background = "#ccc";
+	        else
+			document.querySelectorAll(".ctb").style.background = "#aaa";
+	}
 </script>
 </body>
 </html>
