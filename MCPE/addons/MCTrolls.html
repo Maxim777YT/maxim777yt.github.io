@@ -92,6 +92,11 @@
       #ct1 {
 	      border-radius: 25% 25% 0 0;
       }
+      #ct1, #ct2 {
+      animation-name: la;
+      animation-duration: 1.5s;
+      background: #aaa;
+      }
       .h {
 	      background: #ccc;
       }
@@ -144,7 +149,8 @@
 		 setCookie("theme, white");
 	 setInterval(function() {
 		if(getCookie("tm") == "true") {
-			document.querySelector(".tb").style.display="block";
+			document.querySelector("#ct1").style.display="block";
+                        setTimeout(function() { if(getCookie("tm") == "true") { document.querySelector("#ct2").style.display = "block"; setTimeout(function() { document.querySelector(".tb").style.display = "block"; }, 1000); } else { document.querySelector(".tb").style.display = none; }, 1000);
                         document.querySelector(".ct").style.borderRadius = "15% 15% 0 0";
 			document.querySelector(".cth").style.borderRadius = "0";
                 }
