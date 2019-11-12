@@ -171,6 +171,12 @@
                                 document.querySelectorAll(".dnlt").forEach(el => { el.style.color = "#000"; });
                 }
         }, 10);
+	document.querySelector(".ct").onmouseover = function() {
+		document.querySelector(".tb").style.display = "block";
+	}
+	document.querySelector(".ct").onmouseout = function() {
+		document.querySelector(".tb").style.display = "none";
+	}
 </script>
 </body>
 </html>
