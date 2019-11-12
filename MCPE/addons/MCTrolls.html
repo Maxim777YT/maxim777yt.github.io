@@ -32,6 +32,14 @@
             
     </script>
     <style>
+       @keyframes la {
+	 0% {
+		opacity: 0%; 
+	 }
+	 100% {
+		opacity: 100%; 
+	 }
+       }
        @font-face {
 	       font-family: Minecraft;
 	       src: url("Minecraft_rus.ttf");
@@ -61,6 +69,8 @@
 	      margin-bottom: 0;
 	      background: #aaa;
 	      text-align: right;
+	      animation-name: la;
+	      animation-duration: 3s;
       }
       .cth {
 	      height: 30pt;
