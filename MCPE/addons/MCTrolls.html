@@ -177,6 +177,14 @@
 	document.querySelector(".ct").onmouseout = function() {
 		document.querySelector(".tb").style.display = "none";
 	}
+	document.querySelectorAll(".ctb").forEach(ctb => {
+		ctb.onmouseover = function() {
+			ctb.style.background = "#ccc";
+		}
+		ctb.onmouseout = function() {
+			ctb.style.background = "#ccc";
+		}
+	});
 </script>
 </body>
 </html>
