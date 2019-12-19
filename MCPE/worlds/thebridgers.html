@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="main.ico">
+    <title>MCTrolls</title>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/minecraftia" type="text/css"/>
+    <script>
+	    function setCookie(cname, cvalue) {
+  document.cookie = cname + "=" + cvalue + ";path=/";
+            }
+	    function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+            }
+	    function ctm() {
+		    if(getCookie("tm") == "false")
+		            setCookie("tm", "true");
+		    else if(getCookie("tm") == "true")
+			    setCookie("tm", "false");
+	    }
+            
+    </script>
+    <style>
+       @keyframes la {
+	 0% {
+		opacity: .0; 
+	 }
+	 100% {
+		opacity: 1; 
+	 }
+       }
+       @font-face {
+	       font-family: Minecraft;
+	       src: url("Minecraft_rus.ttf");
+       }
+       .p, .img {
+	    color: #000;
+      }
+      .dnlt { font-size: 20pt; font-family: Arial; color: black; }
+      .img {
+	    border: 5px solid black;
+	    width: 45%;
+      }
+      .header {
+        background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	color: #000;
+	font-family: Minecraft, "MinecraftiaRegular", Arial;
+      }
+      .ct, .ct:hover {
+	      position: fixed;
+	      bottom: 0;
+	      right: 0;
+	      margin-bottom: 0;
+	      text-align: center;
+	      width: 90pt;
+      }
+      .cth {
+	      height: 30pt;
+	      border: none;
+	      border-radius: 25% 25% 0 0;
+	      background: #aaa;
+	      margin: 0;
+      }
+      .ctb {
+	      height: 30pt;
+	      border: none;
+	      border-radius: 0;
+	      background: #aaa;
+	      margin: 0;
+      }
+      .tb {
+	      animation-name: la;
+	      animation-duration: 1.5s;
+	      background: #aaa;
+      }
+      #ct1 {
+	      border-radius: 25% 25% 0 0;
+      }
+      .h {
+	      background: #ccc;
+      }
+      .p {
+        font-family: Minecraft, "Comic Sans MS", "Comic Sans", Comic Sans MS, Comic Sans, "Marker Felt", Arial;
+	font-size: 20pt;
+      }
+      .link {
+	 font-family: Arial;
+	 font-size: 21pt;
+	 font-weight: bold;
+      }
+      .dnld {
+	 background: white;
+	 border: 7px double black;
+      }
+    </style>
+  </head>
+  <body bgcolor="#fff" link="#10cc10" vlink="#20bb20" alink="15bc15">
+	  <h1 class="header"><center class="h">MCTrolls</center></h1>
+	  <div class="ct"><div class="tb" style="display: none;"><div class="ctb" id="ct1" onclick='setCookie("theme", "white")'><h1>Белая</h1></div><div class="ctb" id="ct2" onclick='setCookie("theme", "black")'><h1>Чёрная</h1></div><br></div><h1 class="cth" onclick="ctm();">Тема</h1></div>
+	  <div id="lol"></div>
+	  <br>
+    <img src="images/tbmain.png" alt="Иконка"><br>
+    <p class="p">TheBridgers это 1 на 1  пвп миниигра.<br><br><p>
+    <img class="img" src="images/tbmap.png" alt="Карта"><br><br>
+    <img class="img" src="images/tbnr.png" alt="Яйцо реактора Нижнего Мира на карте"><br><br>
+	  <p class="p">Это перевод с языком "Русский(Германия)", второй добавленный язык также многое изменяет.</p><br>
+	  <div class="dnld">
+	  <p class="dnlt">Скачать TheBridgers:</p>
+    <a class="link" href="https://drive.google.com/file/d/1oKWCYjvrHyxiM0lAaWN0mPOhkxwpbUig/view?usp=drivesdk" target="_blank">Скачать через Google Диск</a>
+	  </div>
+	  <br>
+<script>
+	document.querySelector("#lol").style.height=Number(document.querySelector("#lol").height) + Number(document.querySelector("#lol").height)/3;
+        document.querySelector(".cth").style.width = document.querySelector("#ct2").width;
+	if(!(getCookie("tm") == "true"))
+		 setCookie("tm", "false");
+	if(!(getCookie("theme") == "black"))
+		 setCookie("theme, white");
+	 setInterval(function() {
+		if(getCookie("tm") == "true") {
+			document.querySelector(".tb").style.display="block";
+                        document.querySelector(".ct").style.borderRadius = "15% 15% 0 0";
+			document.querySelector(".cth").style.borderRadius = "0";
+                }
+		else if(getCookie("tm") == "false") {
+			document.querySelector(".tb").style.display="none";
+                        document.querySelector(".ct").style.borderRadius = "25% 25% 0 0";
+			document.querySelector(".cth").style.borderRadius = "25% 25% 0 0";
+                }
+	}, 10);
+        setInterval(function() {
+                if(getCookie("theme") == "black") {
+                                document.querySelector("body").setAttribute("bgcolor", "#000");
+                                document.querySelectorAll(".img").forEach(el => { el.style.border = "5px solid white"; });
+                                document.querySelectorAll(".p").forEach(el => { el.style.color = "#fff"; });
+                                document.querySelectorAll(".dnld").forEach( el => { el.style.border = "7px double white"; });
+                                document.querySelectorAll(".dnld").forEach(el => { el.style.background = "#005";});
+                                document.querySelectorAll(".dnlt").forEach(el => { el.style.color = "#fff"; });
+                } else if(getCookie("theme") == "white") {
+                                document.querySelector("body").setAttribute("bgcolor", "#fff");
+                                document.querySelectorAll(".img").forEach(el => { el.style.border = "5px solid black"; });
+                                document.querySelectorAll(".p").forEach(el => { el.style.color = "#000"; });
+                                document.querySelectorAll(".dnld").forEach(el => { el.style.border = "7px double black"; });
+                                document.querySelectorAll(".dnld").forEach(el => { el.style.background = "#fff"; });
+                                document.querySelectorAll(".dnlt").forEach(el => { el.style.color = "#000"; });
+                }
+        }, 10);
+	document.querySelector(".ct").onmouseover = function() {
+		document.querySelector(".tb").style.display = "block";
+	}
+	document.querySelector(".ct").onmouseout = function() {
+		document.querySelector(".tb").style.display = "none";
+	}
+	document.querySelectorAll(".ctb").forEach(ctb => {
+		ctb.onmouseover = function() {
+			ctb.style.background = "#ccc";
+		}
+		ctb.onmouseout = function() {
+			ctb.style.background = "#ccc";
+		}
+	});
+</script>
+</body>
+</html>
